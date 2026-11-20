@@ -1,75 +1,159 @@
 <!doctype html>
 <html lang="ru"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Эксперт ПЛЮС · недвижимость · демо</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#0b0f17">
+<title>Эксперт ПЛЮС · электронная визитка</title>
 <style>
-:root{--bg:#f6f3ee;--ink:#15161a;--mut:#6b6a66;--card:#fff;--line:#e4dfd6;--acc:#b5893e;--dark:#14181f}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-.demo{background:#2a2a2a;color:#ddd;font-size:12px;text-align:center;padding:6px 16px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-weight:700;letter-spacing:.02em}
-.logo small{display:block;font-weight:400;color:var(--mut);font-size:12px;letter-spacing:0}
-.btn{display:inline-block;background:var(--dark);color:#fff;text-decoration:none;border:0;border-radius:999px;padding:14px 24px;font:600 15px system-ui,sans-serif;cursor:pointer}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
-.btn.sm{padding:10px 16px;font-size:14px}
-.hero{padding:48px 0 56px}
-.eyebrow{color:var(--acc);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.12em}
-h1{font-size:clamp(36px,7vw,68px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 18px}
-.lead{font-size:clamp(17px,2.3vw,20px);color:#3b3a37;max-width:620px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.addr{margin-top:22px;color:var(--mut);font-size:14px}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(26px,4vw,38px);letter-spacing:-.01em;margin-bottom:24px}
-.revs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
-.rev:before{content:"“";display:block;font:700 44px/0.6 Georgia,serif;color:var(--acc);margin:8px 0 10px}
-.src{margin-top:16px;font-size:14px}.src a{color:var(--ink)}
-.formbox{background:var(--dark);color:#fff;border-radius:24px;padding:28px}
-.formbox h2{color:#fff}.formbox p{color:#c9c6bf;margin:-12px 0 20px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.chips label{cursor:pointer}.chips input{display:none}
-.chips span{display:inline-block;border:1px solid #4a4f59;border-radius:999px;padding:9px 14px;font-size:14px}
-.chips input:checked+span{background:var(--acc);border-color:var(--acc);color:#14181f;font-weight:600}
-.fields{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-.fields input,.fields textarea{width:100%;border:1px solid #3a3f49;background:#1d222b;color:#fff;border-radius:12px;padding:14px;font:15px system-ui,sans-serif}
-.fields textarea{grid-column:1/-1;min-height:84px;resize:vertical}
-.formbox .btn{background:var(--acc);color:#14181f;margin-top:14px;width:100%}
-.note{font-size:12px;color:#8d8a84;margin-top:10px}
-footer{padding:32px 0 48px;color:var(--mut);font-size:13px}
-@media(max-width:600px){.fields{grid-template-columns:1fr}.hero{padding:28px 0 40px}header .btn{display:none}}
+:root{--bg:#0b0f17;--card:rgba(20,26,38,.72);--line:rgba(255,255,255,.09);--ink:#f3efe6;--mut:#9aa3b2;--gold:#d6b26a;--gold2:#f3dca4}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{min-height:100vh;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;overflow-x:hidden}
+.bg{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:#7a5a1f;top:-120px;left:-120px}
+.o2{width:380px;height:380px;background:#1b4e5c;bottom:-140px;right:-100px;animation-duration:22s}
+.o3{width:300px;height:300px;background:#3b2c6b;top:40%;left:55%;animation-duration:26s;opacity:.4}
+@keyframes drift{to{transform:translate(80px,60px) scale(1.15)}}
+.grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);opacity:.5}
+.demo{position:relative;z-index:2;text-align:center;font-size:11px;color:#8b93a1;padding:8px 16px;letter-spacing:.02em}
+.stage{position:relative;z-index:1;display:flex;justify-content:center;gap:64px;align-items:flex-start;padding:8px 16px 48px}
+.side{display:none;max-width:380px;position:sticky;top:80px}
+.side h2{font-size:44px;line-height:1.05;letter-spacing:-.02em;font-weight:700}
+.side h2 em{font-style:normal;background:linear-gradient(90deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.side p{color:var(--mut);margin-top:18px;font-size:16px}
+.card{width:100%;max-width:440px;background:var(--card);border:1px solid var(--line);border-radius:30px;overflow:hidden;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 40px 120px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;animation:rise 1s cubic-bezier(.2,.8,.2,1) both;transition:transform .25s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(60px) scale(.96)}}
+.hero{position:relative;height:190px;background:linear-gradient(160deg,#16202e,#0c1119);overflow:hidden}
+.hero svg.city{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px}
+.city path{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.6s .3s cubic-bezier(.6,0,.2,1) forwards;opacity:.85}
+.city path.b{stroke:#5d7b96;animation-delay:.6s;opacity:.6}
+@keyframes draw{to{stroke-dashoffset:0}}
+.win{fill:var(--gold2);opacity:0;animation:twinkle 4s infinite}
+@keyframes twinkle{0%,100%{opacity:0}40%,60%{opacity:.9}}
+.moon{position:absolute;top:26px;right:34px;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff7dd,#d6b26a 70%);box-shadow:0 0 40px 8px rgba(214,178,106,.35);animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 60px 14px rgba(214,178,106,.5)}}
+.avatar{position:relative;width:104px;height:104px;margin:-56px auto 0;border-radius:50%;display:grid;place-items:center;z-index:2}
+.avatar:before{content:"";position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,var(--gold2),transparent 30%,var(--gold) 55%,transparent 80%,var(--gold2));animation:spin 6s linear infinite}
+.avatar span{position:relative;width:100%;height:100%;border-radius:50%;background:linear-gradient(145deg,#1f2a3b,#0f141e);display:grid;place-items:center;font-size:34px;font-weight:700;color:var(--gold2);letter-spacing:.02em;border:3px solid #0d121b}
+@keyframes spin{to{transform:rotate(1turn)}}
+.body{padding:16px 22px 26px;text-align:center}
+.in{opacity:0;transform:translateY(18px);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+h1{font-size:30px;line-height:1.1;letter-spacing:-.01em;margin-top:12px}
+.role{color:var(--mut);margin-top:6px;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:14px}
+.chip{border:1px solid rgba(214,178,106,.35);color:var(--gold2);border-radius:999px;padding:5px 11px;font-size:12px;background:rgba(214,178,106,.06)}
+.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.act{display:flex;flex-direction:column;align-items:center;gap:7px;color:var(--ink);text-decoration:none;font-size:12px;background:none;border:0;cursor:pointer;font-family:inherit}
+.act i{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line);transition:transform .2s,background .2s}
+.act svg{width:22px;height:22px;fill:var(--gold2)}
+.act:hover i{background:rgba(214,178,106,.14);transform:translateY(-3px)}
+.act:active i{transform:scale(.92)}
+.cta{position:relative;overflow:hidden;display:block;width:100%;margin-top:22px;padding:17px;border:0;border-radius:18px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1408;font:700 16px inherit;font-family:inherit;text-decoration:none;cursor:pointer;box-shadow:0 14px 40px -12px rgba(214,178,106,.6)}
+.cta:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:shine 3.2s 1.5s infinite}
+@keyframes shine{0%{left:-60%}35%,100%{left:130%}}
+.meta{display:flex;flex-direction:column;gap:8px;margin-top:20px;text-align:left}
+.meta div{display:flex;gap:10px;align-items:center;color:var(--mut);font-size:13px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+.meta b{color:var(--ink);font-weight:600}
+.meta svg{width:16px;height:16px;fill:var(--gold);flex:none}
+.sec{padding:26px 22px;border-top:1px solid var(--line)}
+.sec h3{font-size:19px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:baseline}
+.sec h3 small{font-size:12px;color:var(--mut);font-weight:400}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.svc div{padding:15px;border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));border:1px solid var(--line);transition:transform .3s}
+.svc div:hover{transform:translateY(-4px)}
+.svc b{display:block;font-size:15px}.svc span{color:var(--mut);font-size:12px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -22px;padding:0 22px 6px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.obj{flex:0 0 78%;scroll-snap-align:start;border-radius:18px;overflow:hidden;border:1px dashed rgba(214,178,106,.35);background:rgba(255,255,255,.02)}
+.obj .ph{height:120px;background:linear-gradient(110deg,#1a2231 30%,#26324a 50%,#1a2231 70%);background-size:200% 100%;animation:sk 1.8s linear infinite;display:grid;place-items:center;color:#56637a;font-size:12px}
+@keyframes sk{to{background-position:-200% 0}}
+.obj p{padding:12px 14px;font-size:13px;color:var(--mut)}
+.obj p b{display:block;color:var(--ink);font-size:14px;margin-bottom:2px}
+.revs{position:relative}
+.rtrack{display:flex;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.r{flex:0 0 100%;padding:20px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--line);text-align:left;font-size:15px}
+.r:before{content:"“";display:block;font:700 46px/.6 Georgia,serif;color:var(--gold);margin:10px 0 8px}
+.rclip{overflow:hidden;border-radius:20px}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.dots i{width:7px;height:7px;border-radius:9px;background:#3a4354;transition:all .3s}
+.dots i.on{width:22px;background:var(--gold)}
+.src{display:block;text-align:center;margin-top:12px;font-size:12px;color:var(--mut)}
+.src a{color:var(--gold2)}
+.tasks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tasks label{cursor:pointer}.tasks input{display:none}
+.tasks span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;transition:all .2s}
+.tasks input:checked+span{background:var(--gold);color:#1a1408;border-color:var(--gold);font-weight:600}
+.f input,.f textarea{width:100%;margin-top:8px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);border-radius:14px;padding:14px;font:15px inherit;font-family:inherit;outline:none;transition:border .2s}
+.f input:focus,.f textarea:focus{border-color:var(--gold)}
+.f textarea{min-height:76px;resize:vertical}
+.note{font-size:11px;color:#6f7787;margin-top:10px;text-align:center}
+.foot{padding:20px 22px 26px;border-top:1px solid var(--line);font-size:12px;color:var(--mut);text-align:center}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:#1e2633;border:1px solid var(--line);padding:12px 18px;border-radius:14px;font-size:14px;transition:transform .4s cubic-bezier(.2,.8,.2,1);z-index:9}
+.toast.on{transform:translate(-50%,0)}
+@media(min-width:980px){.side{display:block}.stage{padding-top:48px}}
 </style></head><body>
+<div class="bg"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
 <div class="demo">Демо-концепт. Не официальный сайт, удалим по первой просьбе</div>
-<div class="wrap">
-<header><div class="logo">Эксперт ПЛЮС<small>Агентство недвижимости</small></div><a class="btn sm" href="#form">Оставить заявку</a></header>
-<div class="hero">
-<div class="eyebrow">Агентство · Продажа и покупка квартир</div>
-<h1>Эксперт ПЛЮС</h1>
-<p class="lead">Продажа и покупка квартир в Москве и области. Расскажите задачу, ответим в Telegram и подскажем, с чего начать.</p>
-<div class="cta"><a class="btn" href="#form">Оставить заявку</a><a class="btn ghost" href="https://t.me/expertpluse21">Написать в Telegram</a></div>
-<div class="addr">Москва, Зелёный проспект, 20</div>
+<div class="stage">
+<aside class="side in" style="animation-delay:.4s"><h2>Электронная визитка, которая <em>приводит заявки</em></h2><p>Клиент открывает ссылку с телефона, видит отзывы и услуги, сохраняет контакт в один тап и пишет в Telegram.</p></aside>
+<main class="card" id="card">
+<div class="hero"><div class="moon"></div>
+<svg class="city" viewBox="0 0 440 150" preserveAspectRatio="xMidYMax slice">
+<path class="b" d="M0 150V110h30V86h22v24h18V70h26v40h20V96h24v54"/>
+<path d="M120 150V60h34V34h8V18h4v16h8v26h32v90M190 150V78h40v72M232 150V40l26-18 26 18v110M286 150V90h22V64h30v86M340 150V98h24V74h28v76h48"/>
+<rect class="win" x="128" y="74" width="5" height="7" style="animation-delay:0.00s"/><rect class="win" x="140" y="90" width="5" height="7" style="animation-delay:0.37s"/><rect class="win" x="136" y="110" width="5" height="7" style="animation-delay:0.74s"/><rect class="win" x="196" y="92" width="5" height="7" style="animation-delay:1.11s"/><rect class="win" x="210" y="112" width="5" height="7" style="animation-delay:1.48s"/><rect class="win" x="244" y="56" width="5" height="7" style="animation-delay:1.85s"/><rect class="win" x="258" y="70" width="5" height="7" style="animation-delay:2.22s"/><rect class="win" x="268" y="96" width="5" height="7" style="animation-delay:2.59s"/><rect class="win" x="246" y="120" width="5" height="7" style="animation-delay:2.96s"/><rect class="win" x="294" y="104" width="5" height="7" style="animation-delay:3.33s"/><rect class="win" x="314" y="80" width="5" height="7" style="animation-delay:3.70s"/><rect class="win" x="322" y="116" width="5" height="7" style="animation-delay:4.07s"/><rect class="win" x="350" y="108" width="5" height="7" style="animation-delay:4.44s"/><rect class="win" x="372" y="92" width="5" height="7" style="animation-delay:4.81s"/>
+</svg></div>
+<div class="avatar in" style="animation-delay:.5s"><span>ЭП</span></div>
+<div class="body">
+<h1 class="in" style="animation-delay:.65s">Эксперт ПЛЮС</h1>
+<div class="role in" style="animation-delay:.75s">Агентство недвижимости</div>
+<div class="chips in" style="animation-delay:.85s"><span class="chip">Продажа</span><span class="chip">Покупка квартир</span></div>
+<div class="acts in" style="animation-delay:.95s">
+<a class="act" href="tel:+74952601741"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></i>Позвонить</a>
+<a class="act" href="https://t.me/expertpluse21"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.07-.87 1.33-1.76.83l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.54-.61-.2L6.38 13.1l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.76-7.23c.87-.32 1.63.2 1.34 1.47z"/></svg></i>Telegram</a>
+<a class="act" href="https://yandex.ru/maps/org/116102267258/"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></i>Маршрут</a>
+<button class="act" id="save"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14l4-3h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm5 8H7v-.7c0-1.7 3.3-2.6 5-2.6s5 .9 5 2.6z"/></svg></i>В контакты</button>
+</div>
+<a class="cta in" style="animation-delay:1.05s" href="#form">Оставить заявку</a>
+<div class="meta in" style="animation-delay:1.15s">
+<div><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg><span><b>49 отзывов</b> на Яндекс Картах</span></div>
+<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span><b>Москва, Зелёный проспект, 20</b> · м. Перово</span></div>
+<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span><b>+7 495 260-17-41</b> · Ежедневно 10:00–17:00</span></div>
 </div>
 </div>
-<section><div class="wrap">
-<h2>Что говорят клиенты</h2>
-<div class="revs"><div class="rev">Ирина Каймаз приехала на квартиру, дала аргументированную рыночную оценку, и продажу не пришлось растягивать.</div><div class="rev">Профессиональный подход к покупке квартиры, всегда понятно, что делать на просмотрах.</div><div class="rev">С Ириной сначала продали квартиру и купили на вторичке, а через два года обратились снова.</div></div>
-<p class="src">Пересказ отзывов с <a href="https://yandex.ru/maps/org/116102267258/reviews/" rel="nofollow">Яндекс Карт</a></p>
-</div></section>
-<section id="form"><div class="wrap"><div class="formbox">
-<h2>Оставить заявку</h2>
-<p>Заявка придёт напрямую в Telegram, без посредников</p>
-<form id="f">
-<div class="chips"><label><input type="radio" name="task" value="Купить" checked><span>Купить</span></label><label><input type="radio" name="task" value="Продать"><span>Продать</span></label><label><input type="radio" name="task" value="Сдать"><span>Сдать</span></label><label><input type="radio" name="task" value="Снять"><span>Снять</span></label><label><input type="radio" name="task" value="Ипотека"><span>Ипотека</span></label></div>
-<div class="fields"><input name="n" placeholder="Как к вам обращаться" required><input name="p" placeholder="Телефон" inputmode="tel" required><textarea name="c" placeholder="Коротко о задаче, если хотите"></textarea></div>
-<button class="btn" type="submit">Отправить в Telegram</button>
-<div class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</div>
-</form></div></div></section>
-<footer><div class="wrap">Агентство недвижимости · Москва, Зелёный проспект, 20</div></footer>
+<div class="sec rv"><h3>Чем помогаем</h3><div class="svc"><div><b>Продажа</b><span>Оценка, показы и сделка</span></div><div><b>Покупка</b><span>Подбор и проверка объекта</span></div></div></div>
+<div class="sec rv"><h3>Каталог объектов <small>листайте →</small></h3>
+<div class="rail"><div class="obj"><div class="ph">место для фото объекта</div><p><b>Ваш объект 1</b>Фото, планировка, цена и кнопка «Записаться на показ»</p></div><div class="obj"><div class="ph">место для фото объекта</div><p><b>Ваш объект 2</b>Фото, планировка, цена и кнопка «Записаться на показ»</p></div><div class="obj"><div class="ph">место для фото объекта</div><p><b>Ваш объект 3</b>Фото, планировка, цена и кнопка «Записаться на показ»</p></div></div></div>
+<div class="sec rv"><h3>Отзывы клиентов</h3>
+<div class="revs"><div class="rclip"><div class="rtrack" id="rt"><div class="r">Ирина Каймаз приехала на квартиру, дала аргументированную рыночную оценку, и продажу не пришлось растягивать.</div><div class="r">Профессиональный подход к покупке квартиры, всегда понятно, что делать на просмотрах.</div><div class="r">С Ириной сначала продали квартиру и купили на вторичке, а через два года обратились снова.</div></div></div>
+<div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
+<span class="src">Пересказ отзывов с <a href="https://yandex.ru/maps/org/116102267258/reviews/" rel="nofollow">Яндекс Карт</a></span></div></div>
+<div class="sec rv" id="form"><h3>Оставить заявку</h3>
+<form class="f" id="f"><div class="tasks"><label><input type="radio" name="t" value="Купить" checked><span>Купить</span></label><label><input type="radio" name="t" value="Продать"><span>Продать</span></label><label><input type="radio" name="t" value="Сдать"><span>Сдать</span></label><label><input type="radio" name="t" value="Снять"><span>Снять</span></label><label><input type="radio" name="t" value="Ипотека"><span>Ипотека</span></label></div>
+<input name="n" placeholder="Как к вам обращаться" required><input name="p" placeholder="Телефон" inputmode="tel" required><textarea name="c" placeholder="Коротко о задаче"></textarea>
+<button class="cta" type="submit">Отправить в Telegram</button>
+<div class="note">Заявка придёт напрямую в Telegram. Нажимая кнопку, вы соглашаетесь на обработку персональных данных</div></form></div>
+<div class="foot">Агентство недвижимости · Москва, Зелёный проспект, 20</div>
+</main></div>
+<div class="toast" id="toast">Контакт сохранён</div>
 <script>
-document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();var d=new FormData(this);
-var t='Здравствуйте! Заявка с сайта.\nЗадача: '+d.get('task')+'\nИмя: '+d.get('n')+'\nТелефон: '+d.get('p')+(d.get('c')?'\nКомментарий: '+d.get('c'):'');
-location.href='https://t.me/expertpluse21?text='+encodeURIComponent(t);});
+(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var rt=document.getElementById('rt'),dots=document.querySelectorAll('#dots i'),n=dots.length,i=0,timer;
+function go(k){i=(k+n)%n;rt.style.transform='translateX(-'+i*100+'%)';dots.forEach(function(d,j){d.classList.toggle('on',j===i)})}
+if(n>1){timer=setInterval(function(){go(i+1)},4200);dots.forEach(function(d,j){d.onclick=function(){clearInterval(timer);go(j)}});
+var sx=0;rt.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;clearInterval(timer)},{passive:true});
+rt.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(i+(dx<0?1:-1))})}
+var card=document.getElementById('card');
+if(matchMedia('(hover:hover)').matches){document.addEventListener('mousemove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;card.style.transform='perspective(1400px) rotateY('+x*5+'deg) rotateX('+(-y*4)+'deg)'})}
+document.getElementById('save').onclick=function(){var b=new Blob(["BEGIN:VCARD\nVERSION:3.0\nFN:Эксперт ПЛЮС\nORG:Агентство недвижимости\nTEL;TYPE=CELL:+74952601741\nURL:https://t.me/expertpluse21\nADR:;;Москва, Зелёный проспект, 20;;;;\nEND:VCARD"],{type:'text/vcard'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='expert-plus.vcf';a.click();var t=document.getElementById('toast');t.classList.add('on');setTimeout(function(){t.classList.remove('on')},2200)};
+document.getElementById('f').onsubmit=function(e){e.preventDefault();var d=new FormData(this);
+var s='Здравствуйте! Заявка с визитки.\nЗадача: '+d.get('t')+'\nИмя: '+d.get('n')+'\nТелефон: '+d.get('p')+(d.get('c')?'\nКомментарий: '+d.get('c'):'');
+location.href='https://t.me/expertpluse21?text='+encodeURIComponent(s)};
+})();
 </script>
 </body></html>
