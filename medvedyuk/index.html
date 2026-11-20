@@ -1,159 +1,337 @@
 <!doctype html>
 <html lang="ru"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#0b0f17">
-<title>Сергей Медведюк · электронная визитка</title>
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#0a0c10">
+<title>Сергей Медведюк · риелтор</title>
+<link rel="preload" href="../assets/gsap.min.js" as="script"><link rel="stylesheet" href="../assets/fonts.css">
+<link rel="preload" href="img/medvedyuk.jpg" as="image">
 <style>
-:root{--bg:#0b0f17;--card:rgba(20,26,38,.72);--line:rgba(255,255,255,.09);--ink:#f3efe6;--mut:#9aa3b2;--gold:#d6b26a;--gold2:#f3dca4}
+:root{--bg:#0a0c10;--bg2:#10141b;--ink:#f2ede4;--mut:#8e96a4;--line:rgba(255,255,255,.1);--card:#121720;--on:#0a0c10;--shade:rgba(0,0,0,.4);--acc:#5fbf8f;--serif:"Cormorant Garamond",Georgia,serif;--sans:Manrope,"Segoe UI",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
-body{min-height:100vh;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;overflow-x:hidden}
-.bg{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
-.o1{width:420px;height:420px;background:#7a5a1f;top:-120px;left:-120px}
-.o2{width:380px;height:380px;background:#1b4e5c;bottom:-140px;right:-100px;animation-duration:22s}
-.o3{width:300px;height:300px;background:#3b2c6b;top:40%;left:55%;animation-duration:26s;opacity:.4}
-@keyframes drift{to{transform:translate(80px,60px) scale(1.15)}}
-.grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);opacity:.5}
-.demo{position:relative;z-index:2;text-align:center;font-size:11px;color:#8b93a1;padding:8px 16px;letter-spacing:.02em}
-.stage{position:relative;z-index:1;display:flex;justify-content:center;gap:64px;align-items:flex-start;padding:8px 16px 48px}
-.side{display:none;max-width:380px;position:sticky;top:80px}
-.side h2{font-size:44px;line-height:1.05;letter-spacing:-.02em;font-weight:700}
-.side h2 em{font-style:normal;background:linear-gradient(90deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-.side p{color:var(--mut);margin-top:18px;font-size:16px}
-.card{width:100%;max-width:440px;background:var(--card);border:1px solid var(--line);border-radius:30px;overflow:hidden;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 40px 120px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;animation:rise 1s cubic-bezier(.2,.8,.2,1) both;transition:transform .25s ease-out}
-@keyframes rise{from{opacity:0;transform:translateY(60px) scale(.96)}}
-.hero{position:relative;height:190px;background:linear-gradient(160deg,#16202e,#0c1119);overflow:hidden}
-.hero svg.city{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px}
-.city path{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.6s .3s cubic-bezier(.6,0,.2,1) forwards;opacity:.85}
-.city path.b{stroke:#5d7b96;animation-delay:.6s;opacity:.6}
-@keyframes draw{to{stroke-dashoffset:0}}
-.win{fill:var(--gold2);opacity:0;animation:twinkle 4s infinite}
-@keyframes twinkle{0%,100%{opacity:0}40%,60%{opacity:.9}}
-.moon{position:absolute;top:26px;right:34px;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff7dd,#d6b26a 70%);box-shadow:0 0 40px 8px rgba(214,178,106,.35);animation:pulse 5s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 60px 14px rgba(214,178,106,.5)}}
-.avatar{position:relative;width:104px;height:104px;margin:-56px auto 0;border-radius:50%;display:grid;place-items:center;z-index:2}
-.avatar:before{content:"";position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,var(--gold2),transparent 30%,var(--gold) 55%,transparent 80%,var(--gold2));animation:spin 6s linear infinite}
-.avatar span{position:relative;width:100%;height:100%;border-radius:50%;background:linear-gradient(145deg,#1f2a3b,#0f141e);display:grid;place-items:center;font-size:34px;font-weight:700;color:var(--gold2);letter-spacing:.02em;border:3px solid #0d121b}
-@keyframes spin{to{transform:rotate(1turn)}}
-.body{padding:16px 22px 26px;text-align:center}
-.in{opacity:0;transform:translateY(18px);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
-@keyframes up{to{opacity:1;transform:none}}
-h1{font-size:30px;line-height:1.1;letter-spacing:-.01em;margin-top:12px}
-.role{color:var(--mut);margin-top:6px;font-size:14px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:14px}
-.chip{border:1px solid rgba(214,178,106,.35);color:var(--gold2);border-radius:999px;padding:5px 11px;font-size:12px;background:rgba(214,178,106,.06)}
-.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
-.act{display:flex;flex-direction:column;align-items:center;gap:7px;color:var(--ink);text-decoration:none;font-size:12px;background:none;border:0;cursor:pointer;font-family:inherit}
-.act i{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line);transition:transform .2s,background .2s}
-.act svg{width:22px;height:22px;fill:var(--gold2)}
-.act:hover i{background:rgba(214,178,106,.14);transform:translateY(-3px)}
-.act:active i{transform:scale(.92)}
-.cta{position:relative;overflow:hidden;display:block;width:100%;margin-top:22px;padding:17px;border:0;border-radius:18px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1408;font:700 16px inherit;font-family:inherit;text-decoration:none;cursor:pointer;box-shadow:0 14px 40px -12px rgba(214,178,106,.6)}
-.cta:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:shine 3.2s 1.5s infinite}
-@keyframes shine{0%{left:-60%}35%,100%{left:130%}}
-.meta{display:flex;flex-direction:column;gap:8px;margin-top:20px;text-align:left}
-.meta div{display:flex;gap:10px;align-items:center;color:var(--mut);font-size:13px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
-.meta b{color:var(--ink);font-weight:600}
-.meta svg{width:16px;height:16px;fill:var(--gold);flex:none}
-.sec{padding:26px 22px;border-top:1px solid var(--line)}
-.sec h3{font-size:19px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:baseline}
-.sec h3 small{font-size:12px;color:var(--mut);font-weight:400}
-.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
-.rv.on{opacity:1;transform:none}
-.svc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.svc div{padding:15px;border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));border:1px solid var(--line);transition:transform .3s}
-.svc div:hover{transform:translateY(-4px)}
-.svc b{display:block;font-size:15px}.svc span{color:var(--mut);font-size:12px}
-.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -22px;padding:0 22px 6px;scrollbar-width:none}
-.rail::-webkit-scrollbar{display:none}
-.obj{flex:0 0 78%;scroll-snap-align:start;border-radius:18px;overflow:hidden;border:1px dashed rgba(214,178,106,.35);background:rgba(255,255,255,.02)}
-.obj .ph{height:120px;background:linear-gradient(110deg,#1a2231 30%,#26324a 50%,#1a2231 70%);background-size:200% 100%;animation:sk 1.8s linear infinite;display:grid;place-items:center;color:#56637a;font-size:12px}
+html.lenis{height:auto}.lenis-smooth{scroll-behavior:auto}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.demo{position:relative;z-index:60;text-align:center;font-size:11px;color:var(--mut);padding:7px 16px;background:var(--bg2)}
+/* loader */
+.loader{position:fixed;inset:0;z-index:100;background:var(--ink);color:var(--bg);display:grid;place-items:center}
+.loader b{font:500 clamp(34px,8vw,72px)/1 var(--serif);letter-spacing:.02em;overflow:hidden;display:block}
+.loader b span{display:inline-block}
+.loader i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--acc)}
+/* header */
+.hd{position:sticky;top:0;z-index:50;transition:background .4s,backdrop-filter .4s,padding .4s}
+.hd.sc{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font:600 20px/1 var(--serif);letter-spacing:.02em;text-decoration:none}
+.brand small{display:block;font:500 11px/1.4 var(--sans);color:var(--mut);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+.nav{display:none;gap:28px;font-size:14px}
+.nav a{text-decoration:none;position:relative;padding:4px 0}
+.nav a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.nav a:hover:after{transform:scaleX(1);transform-origin:left}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;text-decoration:none;font:600 15px var(--sans);border-radius:999px;padding:15px 26px;background:var(--acc);color:#fff;overflow:hidden;isolation:isolate;transition:transform .3s}
+.btn svg{width:18px;height:18px;transition:transform .4s cubic-bezier(.7,0,.2,1)}
+.btn:hover svg{transform:translateX(4px)}
+.btn:before{content:"";position:absolute;inset:0;background:var(--ink);border-radius:inherit;transform:translateY(101%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover:before{transform:none}
+.btn:hover{color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.sm{padding:11px 18px;font-size:14px}
+/* hero shared */
+.hero{position:relative;padding:28px 0 64px}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--acc)}
+.h1{font:500 clamp(54px,12vw,128px)/.92 var(--serif);letter-spacing:-.01em;margin:18px 0 22px}
+.h1 em{font-style:italic;color:var(--acc)}
+.lead{font-size:clamp(17px,2vw,19px);color:var(--mut);max-width:520px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.badge{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--card);box-shadow:0 10px 40px -12px var(--shade);font-size:14px}
+.badge i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff}
+.badge i svg{width:16px;fill:currentColor}
+.badge b{font-size:18px}
+.photo{position:relative;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+/* A: editorial */
+.A .hero .grid{display:grid;gap:34px}
+.A .frame{aspect-ratio:4/5;max-height:62svh;width:100%;border-radius:999px 999px 28px 28px;box-shadow:0 30px 80px -30px var(--shade)}
+.A .hero .grid > div:last-child{order:-1;max-width:420px;margin:0 auto;width:86%}
+.A .hero .h1{font-size:clamp(50px,13vw,120px)}
+.A .ring{position:absolute;right:-14px;bottom:6%;width:112px;height:112px;z-index:2;background:var(--bg);border-radius:50%}
+.A .ring text{font:600 11px var(--sans);letter-spacing:.32em;fill:var(--ink);text-transform:uppercase}
+/* B: dark */
+.B .hero{padding:0;min-height:calc(100svh - 100px);display:flex;align-items:flex-end}
+.B .bgph{position:absolute;inset:0}
+.B .bgph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.2)}
+.B .bgph{bottom:auto;height:72%}
+.B .bgph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,16,.1) 0%,rgba(10,12,16,.25) 40%,rgba(10,12,16,.85) 78%,var(--bg) 100%)}
+.B .hero .lead{color:#c4c9d2}
+.B .hero .wrap{position:relative;width:100%;padding-bottom:56px}
+.B .h1{font-size:clamp(58px,14vw,150px)}
+.B .lines{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),rgba(255,255,255,.05) calc(25% - 1px) 25%)}
+/* C: brand */
+.C .hero{overflow:hidden;padding:40px 0 70px}
+.C .blob{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--acc),transparent 65%);filter:blur(40px);opacity:.55;top:-140px;right:-160px}
+.C .blob.b2{width:380px;height:380px;left:-180px;top:auto;bottom:-120px;opacity:.3}
+.C .mono{position:relative;width:200px;height:200px;margin:0 0 10px}
+.C .mono .core{position:absolute;inset:26px;border-radius:50%;background:var(--card);display:grid;place-items:center;font:600 64px/1 var(--serif);color:var(--acc);overflow:hidden;box-shadow:0 20px 60px -20px var(--acc)}
+.C .mono .core img{width:100%;height:100%;object-fit:cover}
+.C .mono svg{position:absolute;inset:0}
+.C .mono text{font:600 12px var(--sans);letter-spacing:.3em;fill:var(--ink);text-transform:uppercase}
+/* marquee */
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:20px 0;white-space:nowrap}
+.mq .tr{display:inline-flex;gap:48px;font:500 clamp(28px,4vw,46px)/1 var(--serif);padding-right:48px}
+.mq .tr span{display:inline-flex;align-items:center;gap:48px}
+.mq .tr span:after{content:"✦";font-size:.5em;color:var(--acc)}
+/* sections */
+.sec{padding:84px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}
+.h2{font:500 clamp(38px,6vw,68px)/1 var(--serif);letter-spacing:-.01em}
+.h2 em{font-style:italic;color:var(--acc)}
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+/* tabs */
+.tabs{position:relative;display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--bg2);overflow-x:auto;scrollbar-width:none;max-width:100%;width:max-content}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{position:relative;z-index:1;border:0;background:none;color:var(--mut);font:600 14px var(--sans);padding:11px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:color .4s}
+.tabs button.on{color:#fff}
+.tabs .ind{position:absolute;top:5px;bottom:5px;left:0;border-radius:999px;background:var(--acc);transition:transform .55s cubic-bezier(.7,0,.2,1),width .55s cubic-bezier(.7,0,.2,1)}
+.panels{position:relative;margin-top:26px}
+.panel{display:none;grid-template-columns:1fr;gap:18px}
+.panel.on{display:grid}
+.pcard{background:var(--card);border-radius:24px;padding:28px;box-shadow:0 20px 60px -30px var(--shade)}
+.pcard h3{font:500 36px/1.05 var(--serif);margin-bottom:10px}
+.pcard p{color:var(--mut)}
+.pcard .btn{margin-top:22px}
+.quote{font:italic 500 24px/1.3 var(--serif)}
+.quote:before{content:"“";display:block;font-size:64px;line-height:.6;color:var(--acc);margin:10px 0}
+.src{font-size:13px;color:var(--mut);margin-top:12px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border-radius:24px;overflow:hidden}
+.stat{background:var(--bg);padding:28px}
+.stat b{display:block;font:500 54px/1 var(--serif);color:var(--acc)}
+.stat span{color:var(--mut);font-size:14px}
+/* catalog */
+.hs{overflow:hidden}
+.ht{display:flex;gap:18px;width:max-content;padding:0 20px}
+.obj{width:min(78vw,380px);flex:none;border-radius:24px;overflow:hidden;background:var(--card);border:1px dashed color-mix(in srgb,var(--acc) 50%,transparent)}
+.obj .ph{aspect-ratio:4/3;display:grid;place-items:center;color:var(--mut);font-size:13px;background:linear-gradient(110deg,var(--bg2) 30%,var(--card) 50%,var(--bg2) 70%);background-size:200% 100%;animation:sk 2s linear infinite}
 @keyframes sk{to{background-position:-200% 0}}
-.obj p{padding:12px 14px;font-size:13px;color:var(--mut)}
-.obj p b{display:block;color:var(--ink);font-size:14px;margin-bottom:2px}
-.revs{position:relative}
-.rtrack{display:flex;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.r{flex:0 0 100%;padding:20px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--line);text-align:left;font-size:15px}
-.r:before{content:"“";display:block;font:700 46px/.6 Georgia,serif;color:var(--gold);margin:10px 0 8px}
-.rclip{overflow:hidden;border-radius:20px}
-.dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
-.dots i{width:7px;height:7px;border-radius:9px;background:#3a4354;transition:all .3s}
-.dots i.on{width:22px;background:var(--gold)}
-.src{display:block;text-align:center;margin-top:12px;font-size:12px;color:var(--mut)}
-.src a{color:var(--gold2)}
-.tasks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.tasks label{cursor:pointer}.tasks input{display:none}
-.tasks span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;transition:all .2s}
-.tasks input:checked+span{background:var(--gold);color:#1a1408;border-color:var(--gold);font-weight:600}
-.f input,.f textarea{width:100%;margin-top:8px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);border-radius:14px;padding:14px;font:15px inherit;font-family:inherit;outline:none;transition:border .2s}
-.f input:focus,.f textarea:focus{border-color:var(--gold)}
-.f textarea{min-height:76px;resize:vertical}
-.note{font-size:11px;color:#6f7787;margin-top:10px;text-align:center}
-.foot{padding:20px 22px 26px;border-top:1px solid var(--line);font-size:12px;color:var(--mut);text-align:center}
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:#1e2633;border:1px solid var(--line);padding:12px 18px;border-radius:14px;font-size:14px;transition:transform .4s cubic-bezier(.2,.8,.2,1);z-index:9}
+.obj div.t{padding:18px 20px 22px}
+.obj b{font:500 24px/1.1 var(--serif);display:block;margin-bottom:6px}
+.obj small{color:var(--mut)}
+/* reviews */
+.rv{position:relative;min-height:240px}
+.rv .q{position:absolute;inset:0;font:500 clamp(26px,3.6vw,44px)/1.2 var(--serif);opacity:0;pointer-events:none}
+.rv .q.on{opacity:1;pointer-events:auto}
+.rv .q .w{display:inline-block;overflow:hidden;vertical-align:top}
+.rv .q .w span{display:inline-block}
+.rnav{display:flex;align-items:center;gap:16px;margin-top:22px}
+.rnav button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s}
+.rnav button:hover{background:var(--acc);color:#fff;border-color:var(--acc)}
+.rnav svg{width:20px}
+.rnav .prev svg{transform:rotate(180deg)}
+.bar{flex:1;height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--acc)}
+/* contact */
+.contact{text-align:center;padding:110px 0}
+.contact .h2{font-size:clamp(46px,9vw,110px)}
+.contact .btn{margin-top:34px;font-size:17px;padding:20px 34px}
+.info{display:grid;gap:12px;margin-top:46px;text-align:left}
+.info a,.info div{display:flex;gap:14px;align-items:center;padding:18px 20px;border-radius:18px;background:var(--card);text-decoration:none;transition:transform .3s}
+.info a:hover{transform:translateY(-3px)}
+.info svg{width:20px;height:20px;fill:var(--acc);flex:none}
+.info small{display:block;color:var(--mut);font-size:12px}
+.foot{padding:30px 0 120px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+/* dock */
+.dock{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:8px;padding:8px;border-radius:22px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 20px 50px -20px rgba(0,0,0,.5);border:1px solid var(--line);transform:translateY(140%)}
+.dock a,.dock button{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:15px;padding:13px 8px;font:600 14px var(--sans);text-decoration:none;border:0;cursor:pointer;background:var(--bg2);color:var(--ink)}
+.dock svg{width:18px;height:18px;fill:currentColor}
+.dock .main{background:var(--acc);color:#fff}
+/* sheet */
+.sheet{position:fixed;inset:0;z-index:80;pointer-events:none}
+.sheet .bd{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0}
+.sheet .pn{position:absolute;left:0;right:0;bottom:0;max-width:560px;margin:0 auto;background:var(--bg);border-radius:28px 28px 0 0;padding:14px 22px 30px;transform:translateY(105%)}
+.sheet.on{pointer-events:auto}
+.sheet .grab{width:44px;height:5px;border-radius:5px;background:var(--line);margin:0 auto 18px}
+.sheet h3{font:500 34px/1.05 var(--serif);margin-bottom:6px}
+.sheet p{color:var(--mut);font-size:14px;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chips label{cursor:pointer}.chips input{display:none}
+.chips span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:14px;transition:all .3s}
+.chips input:checked+span{background:var(--acc);color:#fff;border-color:var(--acc)}
+.sheet input[name],.sheet textarea{width:100%;margin-top:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:16px;padding:15px;font:15px var(--sans);outline:none;transition:border .3s}
+.sheet input[name]:focus,.sheet textarea:focus{border-color:var(--acc)}
+.sheet textarea{min-height:70px;resize:none}
+.sheet .btn{width:100%;justify-content:center;margin-top:14px}
+.sheet .x{position:absolute;right:16px;top:14px;width:38px;height:38px;border-radius:50%;border:0;background:var(--bg2);color:var(--ink);font-size:20px;cursor:pointer}
+.note{font-size:11px;color:var(--mut);margin-top:10px;text-align:center}
+.toast{position:fixed;left:50%;top:20px;z-index:90;transform:translate(-50%,-150%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:14px;font-size:14px;transition:transform .5s cubic-bezier(.7,0,.2,1)}
 .toast.on{transform:translate(-50%,0)}
-@media(min-width:980px){.side{display:block}.stage{padding-top:48px}}
-</style></head><body>
-<div class="bg"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+/* cursor */
+.cur{position:fixed;left:0;top:0;z-index:99;pointer-events:none;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:1px solid var(--acc);transition:width .3s,height .3s,margin .3s,background .3s;display:none}
+.cur.big{width:80px;height:80px;margin:-40px 0 0 -40px;background:color-mix(in srgb,var(--acc) 15%,transparent)}
+@media(hover:hover) and (pointer:fine){.cur{display:block}}
+@media(min-width:900px){
+ .nav{display:flex}
+ .A .hero .grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:64px}
+ .A .hero .grid > div:last-child{order:0;width:100%}
+ .B .bgph{left:38%;height:100%}
+ .B .bgph:after{background:linear-gradient(90deg,var(--bg) 0%,rgba(10,12,16,.6) 30%,rgba(10,12,16,.1) 60%),linear-gradient(180deg,transparent 60%,var(--bg))}
+ .A .hero{padding:40px 0 90px}
+ .panel{grid-template-columns:1.2fr 1fr}
+ .info{grid-template-columns:repeat(3,1fr)}
+ .dock{display:none}
+ .foot{padding-bottom:40px}
+ .C .hero .grid{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+ .C .mono{width:300px;height:300px}.C .mono .core{inset:38px;font-size:96px}
+}
+
+.spin{animation:rot 18s linear infinite}@keyframes rot{to{transform:rotate(1turn)}}
+</style></head><body class="B">
+<div class="loader" id="ld"><b><span>Сергей Медведюк</span></b><i></i></div>
 <div class="demo">Демо-концепт. Не официальный сайт, удалим по первой просьбе</div>
-<div class="stage">
-<aside class="side in" style="animation-delay:.4s"><h2>Электронная визитка, которая <em>приводит заявки</em></h2><p>Клиент открывает ссылку с телефона, видит отзывы и услуги, сохраняет контакт в один тап и пишет в Telegram.</p></aside>
-<main class="card" id="card">
-<div class="hero"><div class="moon"></div>
-<svg class="city" viewBox="0 0 440 150" preserveAspectRatio="xMidYMax slice">
-<path class="b" d="M0 150V110h30V86h22v24h18V70h26v40h20V96h24v54"/>
-<path d="M120 150V60h34V34h8V18h4v16h8v26h32v90M190 150V78h40v72M232 150V40l26-18 26 18v110M286 150V90h22V64h30v86M340 150V98h24V74h28v76h48"/>
-<rect class="win" x="128" y="74" width="5" height="7" style="animation-delay:0.00s"/><rect class="win" x="140" y="90" width="5" height="7" style="animation-delay:0.37s"/><rect class="win" x="136" y="110" width="5" height="7" style="animation-delay:0.74s"/><rect class="win" x="196" y="92" width="5" height="7" style="animation-delay:1.11s"/><rect class="win" x="210" y="112" width="5" height="7" style="animation-delay:1.48s"/><rect class="win" x="244" y="56" width="5" height="7" style="animation-delay:1.85s"/><rect class="win" x="258" y="70" width="5" height="7" style="animation-delay:2.22s"/><rect class="win" x="268" y="96" width="5" height="7" style="animation-delay:2.59s"/><rect class="win" x="246" y="120" width="5" height="7" style="animation-delay:2.96s"/><rect class="win" x="294" y="104" width="5" height="7" style="animation-delay:3.33s"/><rect class="win" x="314" y="80" width="5" height="7" style="animation-delay:3.70s"/><rect class="win" x="322" y="116" width="5" height="7" style="animation-delay:4.07s"/><rect class="win" x="350" y="108" width="5" height="7" style="animation-delay:4.44s"/><rect class="win" x="372" y="92" width="5" height="7" style="animation-delay:4.81s"/>
-</svg></div>
-<div class="avatar in" style="animation-delay:.5s"><span>СМ</span></div>
-<div class="body">
-<h1 class="in" style="animation-delay:.65s">Сергей Медведюк</h1>
-<div class="role in" style="animation-delay:.75s">Риелтор · Частный риелтор</div>
-<div class="chips in" style="animation-delay:.85s"><span class="chip">Аренда</span><span class="chip">Сопровождение сделок</span></div>
-<div class="acts in" style="animation-delay:.95s">
-<a class="act" href="tel:+79031820532"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></i>Позвонить</a>
-<a class="act" href="https://t.me/medv777"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.24 1.07-.87 1.33-1.76.83l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.54-.61-.2L6.38 13.1l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.76-7.23c.87-.32 1.63.2 1.34 1.47z"/></svg></i>Telegram</a>
-<a class="act" href="https://yandex.ru/maps/org/30466342589/"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></i>Маршрут</a>
-<button class="act" id="save"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14l4-3h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm5 8H7v-.7c0-1.7 3.3-2.6 5-2.6s5 .9 5 2.6z"/></svg></i>В контакты</button>
+<header class="hd" id="hd"><div class="wrap"><a class="brand" href="#top">Сергей Медведюк<small>риелтор</small></a>
+<nav class="nav"><a href="#help">Услуги</a><a href="#cat">Объекты</a><a href="#rev">Отзывы</a><a href="#con">Контакты</a></nav>
+<button class="btn sm" data-open>Связаться</button></div></header>
+<main id="top">
+<section class="hero"><div class="bgph" data-reveal><img src="img/medvedyuk.jpg" alt="Сергей Медведюк" data-par></div><div class="lines"></div><div class="wrap">
+<div class="eyebrow" data-fade>Риелтор · Частный риелтор</div><h1 class="h1" data-split>Сергей<br><em>Медведюк</em></h1><p class="lead" data-fade>Аренда и сопровождение сделок. Расскажите задачу, ответим в Telegram и подскажем, с чего начать.</p>
+<div class="cta" data-fade><button class="btn" data-open>Записаться на консультацию <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><a class="btn ghost" href="tel:+79031820532">+7 903 182-05-32</a></div>
+<div class="badge" data-fade><i><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg></i><span><b data-count="35">0</b> отзывов на Яндекс Картах</span></div></div></section>
+<div class="mq"><div class="tr" id="mq"><span>Аренда</span><span>Сопровождение</span><span>Аренда</span><span>Сопровождение</span><span>Москва и область</span><span>Аренда</span><span>Сопровождение</span><span>Аренда</span><span>Сопровождение</span><span>Москва и область</span></div></div>
+<section class="sec" id="help"><div class="wrap">
+<div class="sh"><div><div class="kicker" data-fade>Чем помогу</div><h2 class="h2" data-split>Выберите <em>задачу</em></h2></div></div>
+<div class="tabs" id="tabs" data-fade><span class="ind"></span><button class="on" data-t="0">Аренда</button><button data-t="1">Сопровождение</button></div>
+<div class="panels"><div class="panel on" data-p="0">
+<div class="pcard"><h3>Аренда</h3><p>Сдать или снять без хлопот. Напишите пару слов о ситуации, и я подскажу, с чего начать.</p><button class="btn" data-open="Аренда">Обсудить <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+<div class="pcard"><div class="quote">Собственник работает с Сергеем больше 10 лет и сдавал через него квартиру более 8 раз, арендаторы всегда надёжные.</div><div class="src">Из отзывов на Яндекс Картах, пересказ</div></div></div><div class="panel" data-p="1">
+<div class="pcard"><h3>Сопровождение</h3><p>Документы и проверка сделки. Напишите пару слов о ситуации, и я подскажу, с чего начать.</p><button class="btn" data-open="Сопровождение">Обсудить <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+<div class="pcard"><div class="quote">Сопровождал аренду, был на показах вместе с собственниками и подготовил все документы.</div><div class="src">Из отзывов на Яндекс Картах, пересказ</div></div></div></div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="stats" data-fade>
+<div class="stat"><b data-count="35">0</b><span>отзывов на Яндекс Картах</span></div>
+<div class="stat"><b>м.</b><span>Селигерская, Москва, Ильменский проезд, 14к1</span></div>
+<div class="stat"><b>24/7</b><span>Заявки с сайта сразу в Telegram. Режим офиса: Ежедневно, круглосуточно</span></div>
+</div></div></section>
+<section class="sec" id="cat"><div class="wrap sh"><div><div class="kicker" data-fade>Каталог</div><h2 class="h2" data-split>Актуальные <em>объекты</em></h2></div></div>
+<div class="hs" id="hs"><div class="ht" id="ht"><div class="obj"><div class="ph">здесь будет фото объекта</div><div class="t"><b>Ваш объект 1</b><small>Фото, планировка, цена и кнопка «Записаться на показ»</small></div></div><div class="obj"><div class="ph">здесь будет фото объекта</div><div class="t"><b>Ваш объект 2</b><small>Фото, планировка, цена и кнопка «Записаться на показ»</small></div></div><div class="obj"><div class="ph">здесь будет фото объекта</div><div class="t"><b>Ваш объект 3</b><small>Фото, планировка, цена и кнопка «Записаться на показ»</small></div></div><div class="obj"><div class="ph">здесь будет фото объекта</div><div class="t"><b>Ваш объект 4</b><small>Фото, планировка, цена и кнопка «Записаться на показ»</small></div></div></div></div></section>
+<section class="sec" id="rev"><div class="wrap">
+<div class="kicker" data-fade>Отзывы</div><h2 class="h2" data-split style="margin-bottom:34px">Что говорят <em>клиенты</em></h2>
+<div class="rv" id="rv"><div class="q on"><span class="w"><span>Собственник</span></span> <span class="w"><span>работает</span></span> <span class="w"><span>с</span></span> <span class="w"><span>Сергеем</span></span> <span class="w"><span>больше</span></span> <span class="w"><span>10</span></span> <span class="w"><span>лет</span></span> <span class="w"><span>и</span></span> <span class="w"><span>сдавал</span></span> <span class="w"><span>через</span></span> <span class="w"><span>него</span></span> <span class="w"><span>квартиру</span></span> <span class="w"><span>более</span></span> <span class="w"><span>8</span></span> <span class="w"><span>раз,</span></span> <span class="w"><span>арендаторы</span></span> <span class="w"><span>всегда</span></span> <span class="w"><span>надёжные.</span></span></div><div class="q"><span class="w"><span>Пришёл</span></span> <span class="w"><span>по</span></span> <span class="w"><span>рекомендации</span></span> <span class="w"><span>коллеги,</span></span> <span class="w"><span>который</span></span> <span class="w"><span>сам</span></span> <span class="w"><span>работает</span></span> <span class="w"><span>с</span></span> <span class="w"><span>Сергеем</span></span> <span class="w"><span>уже</span></span> <span class="w"><span>4</span></span> <span class="w"><span>года.</span></span></div><div class="q"><span class="w"><span>Сопровождал</span></span> <span class="w"><span>аренду,</span></span> <span class="w"><span>был</span></span> <span class="w"><span>на</span></span> <span class="w"><span>показах</span></span> <span class="w"><span>вместе</span></span> <span class="w"><span>с</span></span> <span class="w"><span>собственниками</span></span> <span class="w"><span>и</span></span> <span class="w"><span>подготовил</span></span> <span class="w"><span>все</span></span> <span class="w"><span>документы.</span></span></div></div>
+<div class="rnav"><button class="prev" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="bar"><i id="bar"></i></div><button class="next" aria-label="Дальше"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+<div class="src">Пересказ отзывов с <a href="https://yandex.ru/maps/org/30466342589/reviews/" rel="nofollow">Яндекс Карт</a></div>
+</div></section>
+<section class="contact" id="con"><div class="wrap">
+<div class="kicker" data-fade>Контакты</div><h2 class="h2" data-split>Обсудим <em>вашу задачу?</em></h2>
+<button class="btn mag" data-open>Записаться на консультацию <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div class="info" data-fade>
+<a href="tel:+79031820532"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span><small>Телефон</small>+7 903 182-05-32</span></a>
+<a href="https://t.me/medv777"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.24 1.07-.87 1.33-1.76.83l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.54-.61-.2L6.38 13.1l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.76-7.23c.87-.32 1.63.2 1.34 1.47z"/></svg><span><small>Telegram</small>@medv777</span></a>
+<a href="https://yandex.ru/maps/org/30466342589/"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span><small>Ежедневно, круглосуточно</small>Москва, Ильменский проезд, 14к1</span></a>
 </div>
-<a class="cta in" style="animation-delay:1.05s" href="#form">Записаться на консультацию</a>
-<div class="meta in" style="animation-delay:1.15s">
-<div><svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 8.9z"/></svg><span><b>35 отзывов</b> на Яндекс Картах</span></div>
-<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span><b>Москва, Ильменский проезд, 14к1</b> · м. Селигерская</span></div>
-<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span><b>+7 903 182-05-32</b> · Ежедневно, круглосуточно</span></div>
-</div>
-</div>
-<div class="sec rv"><h3>Чем помогаем</h3><div class="svc"><div><b>Аренда</b><span>Сдать или снять без хлопот</span></div><div><b>Сопровождение</b><span>Документы и проверка</span></div></div></div>
-<div class="sec rv"><h3>Каталог объектов <small>листайте →</small></h3>
-<div class="rail"><div class="obj"><div class="ph">место для фото объекта</div><p><b>Ваш объект 1</b>Фото, планировка, цена и кнопка «Записаться на показ»</p></div><div class="obj"><div class="ph">место для фото объекта</div><p><b>Ваш объект 2</b>Фото, планировка, цена и кнопка «Записаться на показ»</p></div><div class="obj"><div class="ph">место для фото объекта</div><p><b>Ваш объект 3</b>Фото, планировка, цена и кнопка «Записаться на показ»</p></div></div></div>
-<div class="sec rv"><h3>Отзывы клиентов</h3>
-<div class="revs"><div class="rclip"><div class="rtrack" id="rt"><div class="r">Собственник работает с Сергеем больше 10 лет и сдавал через него квартиру более 8 раз, арендаторы всегда надёжные.</div><div class="r">Пришёл по рекомендации коллеги, который сам работает с Сергеем уже 4 года.</div><div class="r">Сопровождал аренду, был на показах вместе с собственниками и подготовил все документы.</div></div></div>
-<div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
-<span class="src">Пересказ отзывов с <a href="https://yandex.ru/maps/org/30466342589/reviews/" rel="nofollow">Яндекс Карт</a></span></div></div>
-<div class="sec rv" id="form"><h3>Записаться на консультацию</h3>
-<form class="f" id="f"><div class="tasks"><label><input type="radio" name="t" value="Купить" checked><span>Купить</span></label><label><input type="radio" name="t" value="Продать"><span>Продать</span></label><label><input type="radio" name="t" value="Сдать"><span>Сдать</span></label><label><input type="radio" name="t" value="Снять"><span>Снять</span></label><label><input type="radio" name="t" value="Ипотека"><span>Ипотека</span></label></div>
+<button class="btn ghost" id="save" style="margin-top:14px"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14l4-3h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm5 8H7v-.7c0-1.7 3.3-2.6 5-2.6s5 .9 5 2.6z"/></svg> Сохранить контакт</button>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap">Частный риелтор · Москва, Ильменский проезд, 14к1</div></footer>
+<div class="dock" id="dock"><a href="tel:+79031820532"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Звонок</a><a href="https://t.me/medv777"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.24 1.07-.87 1.33-1.76.83l-4.87-3.59-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.96 9.03-8.16c.39-.35-.09-.54-.61-.2L6.38 13.1l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.54l18.76-7.23c.87-.32 1.63.2 1.34 1.47z"/></svg>Telegram</a><button class="main" data-open>Заявка</button></div>
+<div class="sheet" id="sheet"><div class="bd"></div><div class="pn"><div class="grab"></div><button class="x" aria-label="Закрыть">×</button>
+<h3>Записаться на консультацию</h3><p>Заявка придёт напрямую в Telegram, ответим в рабочее время</p>
+<form id="f"><div class="chips"><label><input type="radio" name="t" value="Купить" checked><span>Купить</span></label><label><input type="radio" name="t" value="Продать"><span>Продать</span></label><label><input type="radio" name="t" value="Сдать"><span>Сдать</span></label><label><input type="radio" name="t" value="Снять"><span>Снять</span></label><label><input type="radio" name="t" value="Ипотека"><span>Ипотека</span></label></div>
 <input name="n" placeholder="Как к вам обращаться" required><input name="p" placeholder="Телефон" inputmode="tel" required><textarea name="c" placeholder="Коротко о задаче"></textarea>
-<button class="cta" type="submit">Отправить в Telegram</button>
-<div class="note">Заявка придёт напрямую в Telegram. Нажимая кнопку, вы соглашаетесь на обработку персональных данных</div></form></div>
-<div class="foot">Частный риелтор · Москва, Ильменский проезд, 14к1</div>
-</main></div>
-<div class="toast" id="toast">Контакт сохранён</div>
+<button class="btn" type="submit">Отправить в Telegram <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</div></form></div></div>
+<div class="toast" id="toast">Контакт сохранён</div><div class="cur" id="cur"></div>
+<script src="../assets/gsap.min.js"></script><script src="../assets/ScrollTrigger.min.js"></script><script src="../assets/lenis.min.js"></script>
 <script>
 (function(){
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15});
-document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-var rt=document.getElementById('rt'),dots=document.querySelectorAll('#dots i'),n=dots.length,i=0,timer;
-function go(k){i=(k+n)%n;rt.style.transform='translateX(-'+i*100+'%)';dots.forEach(function(d,j){d.classList.toggle('on',j===i)})}
-if(n>1){timer=setInterval(function(){go(i+1)},4200);dots.forEach(function(d,j){d.onclick=function(){clearInterval(timer);go(j)}});
-var sx=0;rt.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;clearInterval(timer)},{passive:true});
-rt.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(i+(dx<0?1:-1))})}
-var card=document.getElementById('card');
-if(matchMedia('(hover:hover)').matches){document.addEventListener('mousemove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;card.style.transform='perspective(1400px) rotateY('+x*5+'deg) rotateX('+(-y*4)+'deg)'})}
-document.getElementById('save').onclick=function(){var b=new Blob(["BEGIN:VCARD\nVERSION:3.0\nFN:Сергей Медведюк\nORG:Частный риелтор\nTEL;TYPE=CELL:+79031820532\nURL:https://t.me/medv777\nADR:;;Москва, Ильменский проезд, 14к1;;;;\nEND:VCARD"],{type:'text/vcard'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='medvedyuk.vcf';a.click();var t=document.getElementById('toast');t.classList.add('on');setTimeout(function(){t.classList.remove('on')},2200)};
-document.getElementById('f').onsubmit=function(e){e.preventDefault();var d=new FormData(this);
-var s='Здравствуйте! Заявка с визитки.\nЗадача: '+d.get('t')+'\nИмя: '+d.get('n')+'\nТелефон: '+d.get('p')+(d.get('c')?'\nКомментарий: '+d.get('c'):'');
-location.href='https://t.me/medv777?text='+encodeURIComponent(s)};
+var TG="medv777",VC="BEGIN:VCARD\nVERSION:3.0\nFN:Сергей Медведюк\nORG:Частный риелтор\nTEL;TYPE=CELL:+79031820532\nURL:https://t.me/medv777\nEND:VCARD",SLUG="medvedyuk";
+var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var G=window.gsap;
+/* save contact */
+$('#save').onclick=function(){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([VC],{type:'text/vcard'}));a.download=SLUG+'.vcf';a.click();var t=$('#toast');t.classList.add('on');setTimeout(function(){t.classList.remove('on')},2200)};
+/* form */
+$('#f').onsubmit=function(e){e.preventDefault();var d=new FormData(this);var s='Здравствуйте! Заявка с сайта.\nЗадача: '+d.get('t')+'\nИмя: '+d.get('n')+'\nТелефон: '+d.get('p')+(d.get('c')?'\nКомментарий: '+d.get('c'):'');location.href='https://t.me/'+TG+'?text='+encodeURIComponent(s)};
+/* tabs */
+var tabs=$('#tabs'),ind=$('.ind',tabs);
+function moveInd(b){ind.style.width=b.offsetWidth+'px';ind.style.transform='translateX('+(b.offsetLeft)+'px)'}
+$$('button',tabs).forEach(function(b){b.onclick=function(){if(b.classList.contains('on'))return;$$('button',tabs).forEach(function(x){x.classList.remove('on')});b.classList.add('on');moveInd(b);
+ var cur=$('.panel.on'),nx=$('[data-p="'+b.dataset.t+'"]');
+ if(G){G.to(cur.children,{y:-20,opacity:0,duration:.3,stagger:.05,ease:'power2.in',onComplete:function(){cur.classList.remove('on');nx.classList.add('on');G.fromTo(nx.children,{y:40,opacity:0},{y:0,opacity:1,duration:.7,stagger:.1,ease:'expo.out'})}})}
+ else{cur.classList.remove('on');nx.classList.add('on')}}});
+requestAnimationFrame(function(){moveInd($('button.on',tabs))});addEventListener('resize',function(){moveInd($('button.on',tabs))});
+/* reviews */
+var qs=$$('#rv .q'),qi=0,qt;
+function showQ(n){var cur=qs[qi];qi=(n+qs.length)%qs.length;var nx=qs[qi];
+ if(G){G.to($$('.w span',cur),{yPercent:-110,duration:.45,stagger:.012,ease:'power3.in',onComplete:function(){cur.classList.remove('on')}});nx.classList.add('on');G.fromTo($$('.w span',nx),{yPercent:110},{yPercent:0,duration:.8,stagger:.018,delay:.35,ease:'expo.out'})}
+ else{cur.classList.remove('on');nx.classList.add('on')}
+ runBar()}
+function runBar(){var b=$('#bar');if(!b)return;clearTimeout(qt);if(G){G.fromTo(b,{width:'0%'},{width:'100%',duration:6,ease:'none'})}qt=setTimeout(function(){showQ(qi+1)},6000)}
+if(qs.length>1){$('.rnav .next').onclick=function(){showQ(qi+1)};$('.rnav .prev').onclick=function(){showQ(qi-1)};
+ var sx=0;$('#rv').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});$('#rv').addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)showQ(qi+(dx<0?1:-1))})}
+var hmax=0;qs.forEach(function(q){q.style.position='relative';hmax=Math.max(hmax,q.offsetHeight);q.style.position=''});$('#rv').style.minHeight=hmax+'px';
+/* sheet */
+var sh=$('#sheet');
+function openSheet(task){if(task){$$('#f input[name=t]').forEach(function(r){r.checked=(r.value===task)||(task==='Продажа'&&r.value==='Продать')||(task==='Покупка'&&r.value==='Купить')||(task==='Аренда'&&r.value==='Сдать')||(task==='Ипотека'&&r.value==='Ипотека')})}
+ sh.classList.add('on');if(G){G.to($('.bd',sh),{opacity:1,duration:.4});G.fromTo($('.pn',sh),{yPercent:105,y:0},{yPercent:0,y:0,duration:.8,ease:'expo.out'});G.fromTo($$('.pn > *',sh),{y:30,opacity:0},{y:0,opacity:1,duration:.6,stagger:.04,delay:.15,ease:'expo.out'})}else{$('.pn',sh).style.transform='none';$('.bd',sh).style.opacity=1}}
+function closeSheet(){if(G){G.to($('.bd',sh),{opacity:0,duration:.3});G.to($('.pn',sh),{yPercent:105,y:0,duration:.5,ease:'expo.in',onComplete:function(){sh.classList.remove('on')}})}else sh.classList.remove('on')}
+$$('[data-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();openSheet(b.dataset.open)})});
+$('.bd',sh).onclick=closeSheet;$('.x',sh).onclick=closeSheet;
+/* save balance if gsap missing */
+if(!G){$('#ld').remove();$('#dock').style.transform='none';return}
+G.registerPlugin(ScrollTrigger);
+/* smooth scroll */
+var lenis=window.Lenis?new Lenis({lerp:.09,wheelMultiplier:1}):null;
+if(lenis){lenis.on('scroll',ScrollTrigger.update);G.ticker.add(function(t){lenis.raf(t*1000)});G.ticker.lagSmoothing(0)}
+$$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=$(a.getAttribute('href'));if(!t)return;e.preventDefault();lenis?lenis.scrollTo(t,{offset:-70,duration:1.4}):t.scrollIntoView({behavior:'smooth'})})});
+/* split helpers */
+function splitLines(el){var html=el.innerHTML.split(/<br\s*\/?>/i);el.innerHTML=html.map(function(h){return '<span style="display:block;overflow:hidden;padding-bottom:.06em"><span style="display:block">'+h+'</span></span>'}).join('');return $$(':scope > span > span',el)}
+/* loader -> intro */
+var ld=$('#ld'),word=$('b span',ld);
+var tl=G.timeline();
+tl.from(word,{yPercent:110,duration:.8,ease:'expo.out'})
+ .to($('i',ld),{width:'100%',duration:.7,ease:'power2.inOut'},'-=.3')
+ .to(word,{yPercent:-110,duration:.5,ease:'expo.in'})
+ .to(ld,{yPercent:-100,duration:.9,ease:'expo.inOut'},'-=.2')
+ .add(function(){ld.remove()});
+var heroSplit=$('.hero [data-split]');var hl=splitLines(heroSplit);
+tl.from(hl,{yPercent:110,duration:1.1,stagger:.12,ease:'expo.out'},'-=.45');
+var heroFades=$$('.hero [data-fade]');tl.from(heroFades,{y:30,opacity:0,duration:.9,stagger:.08,ease:'expo.out'},'-=.8');
+var rv=$('.hero [data-reveal]');
+if(rv){tl.fromTo(rv,{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.4,ease:'expo.inOut'},'-=1.3');var ri=$('img',rv);if(ri)tl.to(ri,{scale:1.05,duration:1.8,ease:'expo.out'},'-=1.2')}
+var ring=$('.ring');if(ring)tl.from(ring,{scale:0,rotate:-90,opacity:0,duration:1,ease:'back.out(1.6)'},'-=1');
+/* counters */
+$$('[data-count]').forEach(function(el){var n=+el.dataset.count,o={v:0};var run=function(){G.to(o,{v:n,duration:1.8,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(o.v)}})};
+ if(el.closest('.hero'))tl.add(run,'-=0.6');else ScrollTrigger.create({trigger:el,start:'top bottom-=40',once:true,onEnter:run})});
+/* hero parallax */
+var par=$('[data-par]');if(par)G.to(par,{yPercent:12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+/* header */
+ScrollTrigger.create({start:60,onUpdate:function(s){$('#hd').classList.toggle('sc',s.scroll()>60)}});
+/* dock */
+ScrollTrigger.create({trigger:'.hero',start:'bottom 80%',onEnter:function(){G.to('#dock',{y:0,duration:.8,ease:'expo.out'})},onLeaveBack:function(){G.to('#dock',{y:'140%',duration:.5,ease:'expo.in'})}});
+/* section titles and fades */
+$$('main section:not(.hero) [data-split]').forEach(function(el){var ls=splitLines(el);G.from(ls,{yPercent:110,duration:1.1,stagger:.1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}})});
+$$('main section:not(.hero) [data-fade]').forEach(function(el){G.from(el,{y:40,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 90%'}})});
+G.from('.panel.on .pcard',{y:60,opacity:0,duration:1.1,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'.panels',start:'top 85%'}});
+G.from('.info a',{y:40,opacity:0,duration:.9,stagger:.08,ease:'expo.out',scrollTrigger:{trigger:'.info',start:'top 92%'}});
+/* marquee: speed follows scroll */
+var mq=$('#mq'),mx=0,vel=1;
+G.ticker.add(function(){mx-=0.6*vel;var w=mq.scrollWidth/2;if(-mx>=w)mx+=w;if(mx>0)mx-=w;mq.style.transform='translateX('+mx+'px)';vel+= (1-vel)*.05});
+if(lenis)lenis.on('scroll',function(e){vel=1+Math.min(Math.abs(e.velocity)*.25,8)*(e.direction<0?-1:1)});
+/* catalog horizontal */
+var ht=$('#ht');
+var mm=G.matchMedia();
+mm.add('(min-width:900px)',function(){G.to(ht,{x:function(){return -(ht.scrollWidth-innerWidth+40)},ease:'none',scrollTrigger:{trigger:'#hs',start:'center center',end:function(){return '+='+(ht.scrollWidth-innerWidth+200)},scrub:1,pin:'#cat',invalidateOnRefresh:true}})});
+mm.add('(max-width:899px)',function(){$('#hs').style.overflowX='auto';$('#hs').style.scrollSnapType='x mandatory';$$('.obj').forEach(function(o){o.style.scrollSnapAlign='center'});G.from('.obj',{x:80,opacity:0,duration:1,stagger:.1,ease:'expo.out',scrollTrigger:{trigger:'#hs',start:'top 85%'}})});
+/* review intro */
+ScrollTrigger.create({trigger:'#rv',start:'top 85%',once:true,onEnter:function(){G.from($$('.q.on .w span'),{yPercent:110,duration:.9,stagger:.02,ease:'expo.out'});if(qs.length>1)runBar()}});
+/* magnetic + cursor (desktop) */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+ var cur=$('#cur'),cx=G.quickTo(cur,'x',{duration:.35,ease:'power3'}),cy=G.quickTo(cur,'y',{duration:.35,ease:'power3'});
+ addEventListener('mousemove',function(e){cx(e.clientX);cy(e.clientY)});
+ $$('a,button').forEach(function(el){el.addEventListener('mouseenter',function(){cur.classList.add('big')});el.addEventListener('mouseleave',function(){cur.classList.remove('big')})});
+ $$('.btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();G.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4,ease:'power3'})});b.addEventListener('mouseleave',function(){G.to(b,{x:0,y:0,duration:.7,ease:'elastic.out(1,.4)'})})});
+}
+/* press feedback (mobile) */
+$$('.btn,.dock a,.dock button,.info a').forEach(function(b){b.addEventListener('pointerdown',function(){G.to(b,{scale:.95,duration:.15})});b.addEventListener('pointerup',function(){G.to(b,{scale:1,duration:.5,ease:'elastic.out(1,.5)'})});b.addEventListener('pointerleave',function(){G.to(b,{scale:1,duration:.3})})});
+addEventListener('load',function(){ScrollTrigger.refresh()});
 })();
 </script>
 </body></html>
