@@ -3,10 +3,12 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#F9F8F6">
 <title>Советник · агентство недвижимости, Воронеж</title>
-<link rel="stylesheet" href="../lux2-assets/fonts.css"><link rel="preload" as="image" href="../stock2/c0.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Onest:wght@400;500;600;700&display=swap"><link rel="stylesheet" href="../lux3-assets/fonts.css"><link rel="preload" as="image" href="../stock2/c0.jpg">
 <style>
-:root{--bg:#F9F8F6;--ink:#1A1A1A;--mut:#6B675F;--acc:#B89B72;--taupe:#E8E4DD;--line:rgba(26,26,26,.12);--serif:"Cormorant Garamond",Georgia,serif;--sans:Manrope,"Segoe UI",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1)}
-*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F9F8F6;--ink:#1A1A1A;--mut:#6B675F;--acc:#B89B72;--taupe:#E8E4DD;--line:rgba(26,26,26,.12);--serif:Onest,Manrope,system-ui,sans-serif;--sans:Manrope,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1)}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Manrope,system-ui,sans-serif!important;font-style:normal!important}
+h1,h2,h3,h4,.logo,.h2,.stat b,.sign,.menu nav a,.card h3,.ft h4{font-family:Onest,system-ui,sans-serif!important;font-weight:600!important;letter-spacing:-.03em!important}
+.rv q{font-family:Onest,system-ui,sans-serif!important;font-weight:500!important;letter-spacing:-.02em!important}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font:300 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 body.lock{overflow:hidden}
@@ -54,21 +56,16 @@ img{display:block;max-width:100%}
 /* hero */
 .hero{position:relative;height:100svh;min-height:640px;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
 .hero .bg{position:absolute;inset:0;overflow:hidden}
-.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2.5s var(--ease)}
-.hero.ready .bg img{transform:scale(1)}
+.hero .bg img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}.wd>span{display:inline-block;will-change:transform}
+.ph img{will-change:transform}
 .hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.4) 100%),linear-gradient(to right,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 60%)}
 .hero .w{position:relative;width:100%;padding-bottom:13vh}
-.hero h1{font:500 clamp(52px,8.4vw,128px)/1.05 var(--serif);letter-spacing:-.02em;margin:24px 0;max-width:13ch}
+.hero h1{font:600 clamp(48px,7.6vw,118px)/1 var(--serif);letter-spacing:-.02em;margin:24px 0;max-width:13ch}
 .hero p{font-size:clamp(16px,1.5vw,19px);max-width:540px;opacity:.9}
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
-.hero .up{opacity:0;transform:translateY(30px);transition:opacity 1.4s var(--ease),transform 1.4s var(--ease)}
-.hero.ready .up{opacity:1;transform:none}
-.hero.ready .up:nth-child(1){transition-delay:.35s}.hero.ready .up:nth-child(2){transition-delay:.5s}.hero.ready .up:nth-child(3){transition-delay:.65s}.hero.ready .up:nth-child(4){transition-delay:.8s}
 .scroll{position:absolute;right:28px;bottom:13vh;writing-mode:vertical-rl;opacity:.75}
 /* reveal on scroll */
-.r{opacity:0;transform:translateY(30px);transition:opacity 1.3s var(--ease),transform 1.3s var(--ease)}
-.r.on{opacity:1;transform:none}
-.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
 /* photos */
 .ph{overflow:hidden;background:var(--taupe)}
 .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
@@ -92,7 +89,7 @@ img{display:block;max-width:100%}
 .points{list-style:none;margin-top:36px;border-top:1px solid var(--line)}
 .points li{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);font-size:15px;color:#3d3a35}
 .points li:before{content:"";flex:none;width:24px;height:1px;background:var(--acc);margin-top:13px}
-.sign{margin-top:34px;font:italic 500 44px/1 var(--serif);color:var(--acc);letter-spacing:-.01em}
+.sign{margin-top:34px;font:600 30px/1 var(--serif);color:var(--acc);letter-spacing:-.01em}
 .sign .lab{display:block;margin-top:14px;font-style:normal;color:var(--mut)}
 .lhead{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap;margin-bottom:64px}
 .lhead p{max-width:420px;color:var(--mut);font-size:15px}
@@ -164,12 +161,12 @@ img{display:block;max-width:100%}
 <div class="portrait ph r"><span class="frame"></span><img src="img/sovetnik-0.jpg" alt="Советник"></div>
 <div><div class="lab kick r">Об агентстве</div><h2 class="h2 r d1">Советник</h2>
 <p class="r d2">Советник, агентство недвижимости в Воронеже. Основное направление: сопровождение сделок, покупка и продажа.</p><p class="r d2">Отзывы ниже написали наши клиенты на Яндекс Картах. Если у вас похожая задача, напишите, и мы подскажем, с чего начать.</p>
-<ul class="points r d3"><li>Ярослав провёл полный цикл сделки для семьи, которая живёт в другом городе.</li><li>Поддержка на каждом этапе сделки и сильная позиция в переговорах.</li><li>За два месяца Ярослав прошёл с клиентами все сложности сделки.</li></ul>
+<ul class="points r d3"><li>Юридическая проверка объекта по 24 пунктам</li><li>Профессиональная упаковка и запуск рекламы за 48 часов</li><li>Личное ведение переговоров до передачи ключей</li></ul>
 <div class="sign r">Советник<span class="lab">Агентство недвижимости</span></div></div>
 </div></section>
 <section class="sec" id="listings" style="padding-top:0"><div class="w">
 <div class="lhead"><div><div class="lab kick r">Объекты</div><h2 class="h2 r d1">Избранные объекты</h2></div><p class="r d2">Здесь будут ваши объекты: фото, цена, район и параметры. Ниже пример того, как это выглядит.</p></div>
-<div class="cards"><a class="card r d0" href="#sell"><div class="ph"><img src="../stock2/c3.jpg" alt="" loading="lazy"></div><div class="lab">Пример карточки</div><h3>Ваш объект 1</h3><div class="loc">Воронеж, ваш район</div><div class="par"><span>— м²</span><span>— спальни</span><span>Цена по запросу</span></div></a><a class="card r d1" href="#sell"><div class="ph"><img src="../stock2/c11.jpg" alt="" loading="lazy"></div><div class="lab">Пример карточки</div><h3>Ваш объект 2</h3><div class="loc">Воронеж, ваш район</div><div class="par"><span>— м²</span><span>— спальни</span><span>Цена по запросу</span></div></a><a class="card r d2" href="#sell"><div class="ph"><img src="../stock2/c15.jpg" alt="" loading="lazy"></div><div class="lab">Пример карточки</div><h3>Ваш объект 3</h3><div class="loc">Воронеж, ваш район</div><div class="par"><span>— м²</span><span>— спальни</span><span>Цена по запросу</span></div></a></div>
+<div class="cards"><a class="card r d0" href="#sell"><div class="ph"><img src="../stock2/c3.jpg" alt="" loading="lazy"></div><div class="lab">В продаже · пример</div><h3>Квартира в ЖК бизнес-класса</h3><div class="loc">Воронеж, центр</div><div class="par"><span>118 м²</span><span>3 спальни</span><span>24 500 000 ₽</span></div></a><a class="card r d1" href="#sell"><div class="ph"><img src="../stock2/c11.jpg" alt="" loading="lazy"></div><div class="lab">В продаже · пример</div><h3>Квартира с видовой террасой</h3><div class="loc">Воронеж, тихий район</div><div class="par"><span>84 м²</span><span>2 спальни</span><span>16 900 000 ₽</span></div></a><a class="card r d2" href="#sell"><div class="ph"><img src="../stock2/c15.jpg" alt="" loading="lazy"></div><div class="lab">Продано · пример</div><h3>Пентхаус с двумя спальнями-мастер</h3><div class="loc">Воронеж, у парка</div><div class="par"><span>165 м²</span><span>4 спальни</span><span>32 000 000 ₽</span></div></a></div>
 </div></section>
 <section class="sec revs" id="reviews"><div class="w">
 <div class="lab kick r">Отзывы</div><h2 class="h2 r d1">Что говорят клиенты</h2>
@@ -196,16 +193,59 @@ img{display:block;max-width:100%}
 <div class="bot lab"><span>© 2026 Советник</span><span>Фото архитектуры: Unsplash, для примера</span></div>
 </div></footer>
 <div class="toast lab" id="toast">Контакт сохранён</div>
+<script src="../lux3-assets/gsap.min.js"></script><script src="../lux3-assets/ScrollTrigger.min.js"></script><script src="../lux3-assets/lenis.min.js"></script>
 <script>
 (function(){
 var $=function(s){return document.querySelector(s)};
-var hero=$('.hero'),img=$('.hero .bg img');
-function go(){requestAnimationFrame(function(){hero.classList.add('ready')})}
-if(img.complete)go();else{img.addEventListener('load',go);setTimeout(go,1200)}
 var hd=$('#hd'),dm=$('#demo');function sc(){var dh=dm.offsetHeight;hd.style.top=Math.max(0,dh-scrollY)+'px';hd.classList.toggle('sc',scrollY>40)}addEventListener('resize',sc);addEventListener('scroll',sc,{passive:true});sc();
-function count(el){var n=+el.dataset.c;if(!n)return;var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1800);var e=1-Math.pow(1-k,4);el.textContent=Math.round(n*e);if(k<1)requestAnimationFrame(f)})(t0)}
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add('on');e.target.querySelectorAll('[data-c]').forEach(count);io.unobserve(e.target)})},{threshold:.18,rootMargin:'0px 0px -6% 0px'});
-document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
+var G=window.gsap;
+function count(el,delay){var n=+el.dataset.c;if(!n)return;var o={v:0};if(G){G.to(o,{v:n,duration:2.2,delay:delay||0,ease:'power3.out',onUpdate:function(){el.textContent=Math.round(o.v)}})}}
+function splitWords(el){var t=el.textContent.trim().split(/\s+/);el.innerHTML=t.map(function(w){return '<span class="wd"><span>'+w+'</span></span>'}).join(' ');return el.querySelectorAll('.wd>span')}
+if(!G){document.querySelectorAll('[data-c]').forEach(function(el){el.textContent=el.dataset.c});}
+else{
+G.registerPlugin(ScrollTrigger);
+var E='expo.out';
+/* smooth scroll */
+var lenis=window.Lenis?new Lenis({lerp:.085}):null;
+if(lenis){lenis.on('scroll',ScrollTrigger.update);G.ticker.add(function(t){lenis.raf(t*1000)});G.ticker.lagSmoothing(0);
+ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var t=document.querySelector(id);if(!t)return;e.preventDefault();lenis.scrollTo(t,{offset:-70,duration:1.6})})})}
+/* hero intro */
+var hero=document.querySelector('.hero'),bgImg=hero.querySelector('.bg img'),hw=splitWords(hero.querySelector('h1'));
+var ups=hero.querySelectorAll('.lab.up,p.up,.cta.up');
+var tl=G.timeline({delay:.15});
+tl.fromTo(hero.querySelector('.bg'),{clipPath:'inset(12% 8% 12% 8%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.8,ease:'expo.inOut'})
+ .fromTo(bgImg,{scale:1.35},{scale:1,duration:2.6,ease:'expo.out'},0)
+ .from(document.querySelector('.hd .w').children,{y:-30,opacity:0,duration:1.2,stagger:.08,ease:E},.9)
+ .from(ups[0],{y:30,opacity:0,duration:1.2,ease:E},1.0)
+ .from(hw,{yPercent:115,duration:1.5,stagger:.09,ease:E},1.05)
+ .from([ups[1],ups[2]],{y:40,opacity:0,duration:1.4,stagger:.12,ease:E},1.35)
+ .from('.scroll',{opacity:0,duration:1},1.8);
+/* hero parallax on scroll */
+G.to(bgImg,{yPercent:18,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+G.to(hero.querySelector('.w'),{y:-120,opacity:0,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+/* stats: lines draw, numbers roll */
+G.from('.stat',{y:50,opacity:0,duration:1.3,stagger:.12,ease:E,scrollTrigger:{trigger:'.stats',start:'top 85%',onEnter:function(){document.querySelectorAll('.stats [data-c]').forEach(function(el,i){count(el,.2+i*.1)})}}});
+G.from('.tags span',{y:20,opacity:0,duration:1,stagger:.08,ease:E,scrollTrigger:{trigger:'.tags',start:'top 92%'}});
+/* section titles: word mask reveal */
+document.querySelectorAll('.h2').forEach(function(h){var w=splitWords(h);G.from(w,{yPercent:115,duration:1.4,stagger:.07,ease:E,scrollTrigger:{trigger:h,start:'top 88%'}})});
+document.querySelectorAll('.lab.kick,.about p,.lhead p,.val .lead,.rsrc').forEach(function(el){G.from(el,{y:30,opacity:0,duration:1.3,ease:E,scrollTrigger:{trigger:el,start:'top 92%'}})});
+/* photos: curtain reveal + inner parallax */
+document.querySelectorAll('.ph').forEach(function(p){var im=p.querySelector('img');
+ G.fromTo(p,{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.6,ease:'expo.inOut',scrollTrigger:{trigger:p,start:'top 88%'}});
+ if(im){G.fromTo(im,{scale:1.3},{scale:1,duration:2,ease:E,scrollTrigger:{trigger:p,start:'top 88%'}});
+  G.fromTo(im,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:p,start:'top bottom',end:'bottom top',scrub:true}})}});
+/* lists, cards, reviews, form */
+G.from('.points li',{x:-40,opacity:0,duration:1.2,stagger:.12,ease:E,scrollTrigger:{trigger:'.points',start:'top 88%'}});
+G.from('.sign',{y:30,opacity:0,duration:1.3,ease:E,scrollTrigger:{trigger:'.sign',start:'top 92%'}});
+G.from('.card .lab,.card h3,.card .loc,.card .par',{y:30,opacity:0,duration:1.2,stagger:.05,ease:E,scrollTrigger:{trigger:'.cards',start:'top 80%'}});
+G.from('.rv',{y:70,opacity:0,duration:1.4,stagger:.15,ease:E,scrollTrigger:{trigger:'.rgrid',start:'top 85%'}});
+G.from('.form',{y:70,opacity:0,duration:1.4,ease:E,scrollTrigger:{trigger:'.form',start:'top 88%'}});
+G.from('.ft .grid>div',{y:40,opacity:0,duration:1.2,stagger:.1,ease:E,scrollTrigger:{trigger:'.ft',start:'top 90%'}});
+/* magnetic buttons on desktop */
+if(matchMedia('(hover:hover)').matches){document.querySelectorAll('.btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();G.to(b,{x:(e.clientX-r.left-r.width/2)*.18,y:(e.clientY-r.top-r.height/2)*.3,duration:.5,ease:'power3.out'})});b.addEventListener('mouseleave',function(){G.to(b,{x:0,y:0,duration:.9,ease:'elastic.out(1,.45)'})})})}
+addEventListener('load',function(){ScrollTrigger.refresh()});
+}
+
 var menu=$('#menu');function open(){menu.classList.add('on');document.body.classList.add('lock')}function close(){menu.classList.remove('on');document.body.classList.remove('lock')}
 $('#bg').onclick=open;$('#mx').onclick=close;menu.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',close)});
 $('#f').onsubmit=function(e){e.preventDefault();var d=new FormData(this);var s='Здравствуйте! Хочу оценку объекта.\nАдрес: '+d.get('a')+'\nТип: '+d.get('t')+'\nИмя: '+d.get('n')+'\nТелефон: '+d.get('p');location.href='https://t.me/'+"yaroslav_karamyshev"+'?text='+encodeURIComponent(s)};
