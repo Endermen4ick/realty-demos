@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#F9F8F6">
+<title>Метры ближе · агентство недвижимости, Пермь</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Onest:wght@400;500;600;700&display=swap"><link rel="stylesheet" href="../lux3-assets/fonts.css"><link rel="preload" as="image" href="../stock2/c0.jpg">
+<style>
+:root{--bg:#F9F8F6;--ink:#1A1A1A;--mut:#6B675F;--acc:#B89B72;--taupe:#E8E4DD;--line:rgba(26,26,26,.12);--serif:Onest,Manrope,system-ui,sans-serif;--sans:Manrope,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1)}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Manrope,system-ui,sans-serif!important;font-style:normal!important}
+h1,h2,h3,h4,.logo,.h2,.stat b,.sign,.menu nav a,.card h3,.ft h4{font-family:Onest,system-ui,sans-serif!important;font-weight:600!important;letter-spacing:-.03em!important}
+.rv q{font-family:Onest,system-ui,sans-serif!important;font-weight:500!important;letter-spacing:-.02em!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.w{max-width:1280px;margin:0 auto;padding:0 28px}
+.lab{font:500 11px/1.4 var(--sans);letter-spacing:.15em;text-transform:uppercase}
+.serif{font-family:var(--serif);letter-spacing:-.02em;line-height:1.05}
+.demo{position:relative;z-index:40;background:var(--taupe);color:var(--mut);text-align:center;padding:8px 16px;font:500 11px/1.4 var(--sans);letter-spacing:.15em;text-transform:uppercase}
+/* header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:30;color:#fff;transition:top .7s var(--ease),background .7s var(--ease),color .7s var(--ease),border-color .7s var(--ease);border-bottom:1px solid transparent}
+.hd .w{display:flex;align-items:center;justify-content:space-between;height:92px;transition:height .7s var(--ease)}
+.hd.sc{color:var(--ink);background:rgba(249,248,246,.78);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+.hd.sc .w{height:66px}
+.logo{font:500 26px/1 var(--serif);letter-spacing:-.02em;white-space:nowrap}
+.logo small{display:block;margin-top:7px;font:500 10px/1 var(--sans);letter-spacing:.15em;text-transform:uppercase;opacity:.75}
+.nav{display:none;gap:44px}
+.nav a{position:relative;padding:8px 0}
+.nav a:after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:1px;background:currentColor;transition:left .6s var(--ease),right .6s var(--ease)}
+.nav a:hover:after{left:0;right:0}
+/* buttons: curtain fill from the bottom */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;isolation:isolate;padding:17px 34px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;font:500 11px/1 var(--sans);letter-spacing:.15em;text-transform:uppercase;transition:color .6s var(--ease),border-color .6s var(--ease)}
+.btn:before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);transform:translateY(101%);transition:transform .6s var(--ease)}
+.btn:hover:before{transform:translateY(0)}
+.btn:hover{color:var(--bg);border-color:var(--ink)}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn.light:before{background:#fff}
+.btn.light:hover{color:var(--ink);border-color:#fff}
+.hd .btn{padding:13px 24px}
+.hd:not(.sc) .btn:before{background:#fff}
+.hd:not(.sc) .btn:hover{color:var(--ink);border-color:#fff}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:7px;width:44px;height:44px;border:0;background:none;color:inherit;cursor:pointer}
+.burger i{display:block;height:1px;background:currentColor;transition:transform .6s var(--ease),width .6s var(--ease)}
+.burger i:last-child{width:65%;margin-left:auto}
+/* mobile curtain menu */
+.menu{position:fixed;inset:0;z-index:50;background:var(--bg);color:var(--ink);transform:translateY(-100%);transition:transform 1s var(--ease);display:flex;flex-direction:column;padding:28px}
+.menu.on{transform:none}
+.menu .top{display:flex;justify-content:space-between;align-items:center}
+.menu .x{width:44px;height:44px;border:0;background:none;font:300 34px/1 var(--sans);cursor:pointer;color:var(--ink)}
+.menu nav{margin-top:12vh;display:flex;flex-direction:column;gap:6px}
+.menu nav a{font:500 clamp(40px,11vw,64px)/1.15 var(--serif);letter-spacing:-.02em;opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.menu.on nav a{opacity:1;transform:none}
+.menu.on nav a:nth-child(2){transition-delay:.08s}.menu.on nav a:nth-child(3){transition-delay:.16s}.menu.on nav a:nth-child(4){transition-delay:.24s}
+.menu .foot{margin-top:auto;display:grid;gap:10px;color:var(--mut)}
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
+.hero .bg{position:absolute;inset:0;overflow:hidden}
+.hero .bg img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}.wd>span{display:inline-block;will-change:transform}
+.ph img{will-change:transform}
+.hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.4) 100%),linear-gradient(to right,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 60%)}
+.hero .w{position:relative;width:100%;padding-bottom:13vh}
+.hero h1{font:600 clamp(48px,7.6vw,118px)/1 var(--serif);letter-spacing:-.02em;margin:24px 0;max-width:13ch}
+.hero p{font-size:clamp(16px,1.5vw,19px);max-width:540px;opacity:.9}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+.scroll{position:absolute;right:28px;bottom:13vh;writing-mode:vertical-rl;opacity:.75}
+/* reveal on scroll */
+/* photos */
+.ph{overflow:hidden;background:var(--taupe)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.ph:hover img,a:hover .ph img{transform:scale(1.04)}
+/* stats bar */
+.stats{border-bottom:1px solid var(--line)}
+.stats .grid{display:grid;grid-template-columns:1fr 1fr}
+.stat{padding:56px 24px;text-align:center;border-top:1px solid var(--line);border-right:1px solid var(--line)}
+.stat b{display:block;font:500 clamp(40px,4.4vw,64px)/1.05 var(--serif);letter-spacing:-.02em}
+.stat .lab{display:block;margin-top:14px;color:var(--mut)}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 44px;padding:30px 24px 40px;color:#9a958c}
+/* sections */
+.sec{padding:140px 0}
+.kick{color:var(--acc)}
+.h2{font:500 clamp(40px,5vw,72px)/1.05 var(--serif);letter-spacing:-.02em;margin-top:20px}
+.about .grid{display:grid;gap:64px}
+.portrait{position:relative;aspect-ratio:4/5}
+.portrait.logo img{object-fit:contain;padding:18%;background:var(--taupe)}
+.frame{position:absolute;inset:18px;border:1px solid rgba(255,255,255,.6);pointer-events:none;z-index:1}
+.about p{color:#3d3a35;font-size:17px;margin-top:24px;max-width:560px}
+.points{list-style:none;margin-top:36px;border-top:1px solid var(--line)}
+.points li{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);font-size:15px;color:#3d3a35}
+.points li:before{content:"";flex:none;width:24px;height:1px;background:var(--acc);margin-top:13px}
+.sign{margin-top:34px;font:600 30px/1 var(--serif);color:var(--acc);letter-spacing:-.01em}
+.sign .lab{display:block;margin-top:14px;font-style:normal;color:var(--mut)}
+.lhead{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap;margin-bottom:64px}
+.lhead p{max-width:420px;color:var(--mut);font-size:15px}
+.cards{display:grid;gap:40px}
+.card .ph{aspect-ratio:4/3}
+.card .lab{margin-top:24px;color:var(--acc)}
+.card h3{font:500 30px/1.05 var(--serif);letter-spacing:-.02em;margin-top:12px}
+.card .loc{color:var(--mut);font-size:14px;margin-top:8px}
+.card .par{display:flex;gap:24px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:#3d3a35}
+.revs{background:var(--taupe)}
+.rgrid{display:grid;gap:56px;margin-top:72px}
+.rv{border-top:1px solid rgba(26,26,26,.18);padding-top:32px}
+.rv q{display:block;font:500 26px/1.3 var(--serif);letter-spacing:-.01em;quotes:"«" "»"}
+.rv .lab{display:block;margin-top:20px;color:var(--mut)}
+.rsrc{margin-top:64px;font-size:13px;color:var(--mut)}
+.rsrc a{border-bottom:1px solid var(--acc)}
+.val .grid{display:grid;gap:64px;align-items:start}
+.val .lead{color:var(--mut);margin-top:24px;max-width:460px}
+.form{background:#fff;border:1px solid var(--line);padding:48px 40px}
+.f{display:grid;gap:28px}
+.f .lab{color:var(--mut)}
+.f input,.f select{width:100%;margin-top:6px;border:0;border-bottom:1px solid rgba(26,26,26,.22);background:transparent;padding:12px 0;font:300 17px var(--sans);color:var(--ink);outline:none;border-radius:0;-webkit-appearance:none;transition:border-color .6s var(--ease)}
+.f input:focus,.f select:focus{border-color:var(--acc)}
+.f .btn{width:100%}
+.note{font-size:11px;color:#9a958c;margin-top:16px;line-height:1.5}
+.ft{border-top:1px solid var(--line);padding:96px 0 48px;font-size:14px}
+.ft .grid{display:grid;gap:44px}
+.ft h4{font:500 34px/1.05 var(--serif);letter-spacing:-.02em}
+.ft .lab{color:var(--mut);margin-bottom:12px}
+.ft a{transition:color .6s var(--ease)}
+.ft a:hover{color:var(--acc)}
+.ft .bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:72px;padding-top:24px;border-top:1px solid var(--line);color:#9a958c}
+.toast{position:fixed;left:50%;bottom:28px;z-index:60;transform:translate(-50%,160%);background:var(--ink);color:var(--bg);padding:15px 24px;transition:transform .8s var(--ease)}
+.toast.on{transform:translate(-50%,0)}
+@media(min-width:960px){
+ .nav{display:flex}.burger{display:none}
+ .stats .grid{grid-template-columns:repeat(4,1fr)}.stat:last-child{border-right:0}
+ .about .grid{grid-template-columns:5fr 6fr;gap:112px;align-items:center}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .rgrid{grid-template-columns:repeat(3,1fr)}
+ .val .grid{grid-template-columns:5fr 6fr;gap:112px}
+ .ft .grid{grid-template-columns:2fr 1fr 1fr 1fr}
+}
+@media(max-width:959px){.sec{padding:96px 0}.hd .btn{display:none}.stat:nth-child(2n){border-right:0}.scroll{display:none}.hd .w{height:76px}}
+</style></head><body>
+<div class="demo" id="demo">Демо-концепт · удалим по первой просьбе</div>
+<header class="hd" id="hd"><div class="w">
+<a class="logo" href="#top">Метры ближе<small>Агентство недвижимости · Пермь</small></a>
+<nav class="nav lab"><a href="#listings">Объекты</a><a href="#about">Об агентстве</a><a href="#reviews">Отзывы</a><a href="#sell">Продать</a></nav>
+<a class="btn" href="https://t.me/leonovperm">Связаться</a>
+<button class="burger" id="bg" aria-label="Меню"><i></i><i></i></button>
+</div></header>
+<div class="menu" id="menu"><div class="top"><span class="logo">Метры ближе</span><button class="x" id="mx" aria-label="Закрыть">×</button></div>
+<nav><a href="#listings">Объекты</a><a href="#about">Об агентстве</a><a href="#reviews">Отзывы</a><a href="#sell">Продать</a></nav>
+<div class="foot lab"><a href="tel:+73422025552">+7 342 202-55-52</a><a href="https://t.me/leonovperm">Telegram @leonovperm</a></div></div>
+<section class="hero" id="top"><div class="bg"><img src="../stock2/c0.jpg" alt=""></div>
+<div class="w"><div class="lab up">Агентство недвижимости · Пермь</div>
+<h1 class="up">Метры ближе</h1>
+<p class="up">Квартиры, новостройки и ипотека в Перми. Каждую сделку ведём лично, от первой встречи до ключей.</p>
+<div class="cta up"><a class="btn fill" href="#sell">Оценить мой объект</a><a class="btn light" href="#listings">Смотреть объекты</a></div></div>
+<div class="scroll lab">Листайте</div></section>
+<section class="stats"><div class="grid">
+<div class="stat r"><b data-c="61">61</b><span class="lab">отзыв на Яндекс Картах</span></div>
+<div class="stat r d1"><b data-c="3">3</b><span class="lab">направления работы</span></div>
+<div class="stat r d2"><b><span data-c="24">24</span>/7</b><span class="lab">заявки в Telegram</span></div>
+<div class="stat r d3"><b>Пермь</b><span class="lab">город работы</span></div>
+</div><div class="tags lab r"><span>Квартиры</span><span>новостройки</span><span>ипотека</span></div></section>
+<section class="sec about" id="about"><div class="w grid">
+<div class="portrait ph r"><span class="frame"></span><img src="../stock2/c11.jpg" alt=""></div>
+<div><div class="lab kick r">Об агентстве</div><h2 class="h2 r d1">Метры ближе</h2>
+<p class="r d2">Метры ближе, агентство недвижимости в Перми. Основное направление: квартиры, новостройки и ипотека.</p><p class="r d2">Отзывы ниже написали наши клиенты на Яндекс Картах. Если у вас похожая задача, напишите, и мы подскажем, с чего начать.</p>
+<ul class="points r d3"><li>Юридическая проверка объекта по 24 пунктам</li><li>Профессиональная упаковка и запуск рекламы за 48 часов</li><li>Личное ведение переговоров до передачи ключей</li></ul>
+<div class="sign r">Метры<span class="lab">Агентство недвижимости</span></div></div>
+</div></section>
+<section class="sec" id="listings" style="padding-top:0"><div class="w">
+<div class="lhead"><div><div class="lab kick r">Объекты</div><h2 class="h2 r d1">Избранные объекты</h2></div><p class="r d2">Здесь будут ваши объекты: фото, цена, район и параметры. Ниже пример того, как это выглядит.</p></div>
+<div class="cards"><a class="card r d0" href="#sell"><div class="ph"><img src="../stock2/c15.jpg" alt="" loading="lazy"></div><div class="lab">В продаже · пример</div><h3>Квартира в ЖК бизнес-класса</h3><div class="loc">Пермь, центр</div><div class="par"><span>118 м²</span><span>3 спальни</span><span>24 500 000 ₽</span></div></a><a class="card r d1" href="#sell"><div class="ph"><img src="../stock2/c3.jpg" alt="" loading="lazy"></div><div class="lab">В продаже · пример</div><h3>Квартира с видовой террасой</h3><div class="loc">Пермь, тихий район</div><div class="par"><span>84 м²</span><span>2 спальни</span><span>16 900 000 ₽</span></div></a><a class="card r d2" href="#sell"><div class="ph"><img src="../stock2/c11.jpg" alt="" loading="lazy"></div><div class="lab">Продано · пример</div><h3>Пентхаус с двумя спальнями-мастер</h3><div class="loc">Пермь, у парка</div><div class="par"><span>165 м²</span><span>4 спальни</span><span>32 000 000 ₽</span></div></a></div>
+</div></section>
+<section class="sec revs" id="reviews"><div class="w">
+<div class="lab kick r">Отзывы</div><h2 class="h2 r d1">Что говорят клиенты</h2>
+<div class="rgrid"><div class="rv r d0"><q>Помогли купить квартиру на выгодных условиях, всё чётко, быстро и прозрачно.</q><span class="lab">Клиент · Яндекс Карты</span></div><div class="rv r d1"><q>Александр помог купить квартиру, когда никак не получалось накопить на первоначальный взнос.</q><span class="lab">Клиент · Яндекс Карты</span></div><div class="rv r d2"><q>Шесть сделок с агентством, и каждый раз лучшая цена и на покупку, и на продажу.</q><span class="lab">Клиент · Яндекс Карты</span></div></div>
+<p class="rsrc r">Пересказ отзывов с <a href="https://yandex.ru/maps/org/147552835158/reviews/" rel="nofollow">Яндекс Карт</a></p>
+</div></section>
+<section class="sec val" id="sell"><div class="w grid">
+<div><div class="lab kick r">Оценка</div><h2 class="h2 r d1">Узнайте реальную рыночную стоимость вашего объекта</h2><p class="lead r d2">Укажите адрес и контакт. Мы посмотрим похожие сделки в вашем районе и ответим в Telegram.</p></div>
+<div class="form r d1"><form class="f" id="f">
+<label class="lab">Адрес объекта<input name="a" required placeholder="Улица, дом"></label>
+<label class="lab">Тип объекта<select name="t"><option>Квартира</option><option>Дом</option><option>Участок</option><option>Коммерция</option></select></label>
+<label class="lab">Ваше имя<input name="n" required></label>
+<label class="lab">Телефон<input name="p" required inputmode="tel"></label>
+<button class="btn fill" type="submit">Получить оценку</button>
+</form><div class="note">Заявка уйдёт в Telegram. Нажимая кнопку, вы соглашаетесь на обработку персональных данных</div></div>
+</div></section>
+<footer class="ft"><div class="w">
+<div class="grid">
+<div><h4>Метры ближе</h4><p style="color:var(--mut);margin-top:12px">Агентство недвижимости</p></div>
+<div><div class="lab">Телефон</div><a href="tel:+73422025552">+7 342 202-55-52</a></div>
+<div><div class="lab">Telegram</div><a href="https://t.me/leonovperm">@leonovperm</a><br><a href="#" id="save" style="color:var(--mut);font-size:13px">Сохранить контакт</a></div>
+<div><div class="lab">Офис</div><a href="https://yandex.ru/maps/org/147552835158/">Пермь, ул. Максима Горького, 86</a><div style="color:var(--mut);font-size:13px;margin-top:8px"></div></div>
+</div>
+<div class="bot lab"><span>© 2026 Метры ближе</span><span>Фото архитектуры: Unsplash, для примера</span></div>
+</div></footer>
+<div class="toast lab" id="toast">Контакт сохранён</div>
+<script src="../lux3-assets/gsap.min.js"></script><script src="../lux3-assets/ScrollTrigger.min.js"></script><script src="../lux3-assets/lenis.min.js"></script>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var hd=$('#hd'),dm=$('#demo');function sc(){var dh=dm.offsetHeight;hd.style.top=Math.max(0,dh-scrollY)+'px';hd.classList.toggle('sc',scrollY>40)}addEventListener('resize',sc);addEventListener('scroll',sc,{passive:true});sc();
+var G=window.gsap;
+function count(el,delay){var n=+el.dataset.c;if(!n)return;var o={v:0};if(G){G.to(o,{v:n,duration:2.2,delay:delay||0,ease:'power3.out',onUpdate:function(){el.textContent=Math.round(o.v)}})}}
+function splitWords(el){var t=el.textContent.trim().split(/\s+/);el.innerHTML=t.map(function(w){return '<span class="wd"><span>'+w+'</span></span>'}).join(' ');return el.querySelectorAll('.wd>span')}
+if(!G){document.querySelectorAll('[data-c]').forEach(function(el){el.textContent=el.dataset.c});}
+else{
+G.registerPlugin(ScrollTrigger);
+var E='expo.out';
+/* smooth scroll */
+var lenis=window.Lenis?new Lenis({lerp:.085}):null;
+if(lenis){lenis.on('scroll',ScrollTrigger.update);G.ticker.add(function(t){lenis.raf(t*1000)});G.ticker.lagSmoothing(0);
+ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var t=document.querySelector(id);if(!t)return;e.preventDefault();lenis.scrollTo(t,{offset:-70,duration:1.6})})})}
+/* hero intro */
+var hero=document.querySelector('.hero'),bgImg=hero.querySelector('.bg img'),hw=splitWords(hero.querySelector('h1'));
+var ups=hero.querySelectorAll('.lab.up,p.up,.cta.up');
+var tl=G.timeline({delay:.15});
+tl.fromTo(hero.querySelector('.bg'),{clipPath:'inset(12% 8% 12% 8%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.8,ease:'expo.inOut'})
+ .fromTo(bgImg,{scale:1.35},{scale:1,duration:2.6,ease:'expo.out'},0)
+ .from(document.querySelector('.hd .w').children,{y:-30,opacity:0,duration:1.2,stagger:.08,ease:E},.9)
+ .from(ups[0],{y:30,opacity:0,duration:1.2,ease:E},1.0)
+ .from(hw,{yPercent:115,duration:1.5,stagger:.09,ease:E},1.05)
+ .from([ups[1],ups[2]],{y:40,opacity:0,duration:1.4,stagger:.12,ease:E},1.35)
+ .from('.scroll',{opacity:0,duration:1},1.8);
+/* hero parallax on scroll */
+G.to(bgImg,{yPercent:18,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+G.to(hero.querySelector('.w'),{y:-120,opacity:0,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+/* stats: lines draw, numbers roll */
+G.from('.stat',{y:50,opacity:0,duration:1.3,stagger:.12,ease:E,scrollTrigger:{trigger:'.stats',start:'top 85%',onEnter:function(){document.querySelectorAll('.stats [data-c]').forEach(function(el,i){count(el,.2+i*.1)})}}});
+G.from('.tags span',{y:20,opacity:0,duration:1,stagger:.08,ease:E,scrollTrigger:{trigger:'.tags',start:'top 92%'}});
+/* section titles: word mask reveal */
+document.querySelectorAll('.h2').forEach(function(h){var w=splitWords(h);G.from(w,{yPercent:115,duration:1.4,stagger:.07,ease:E,scrollTrigger:{trigger:h,start:'top 88%'}})});
+document.querySelectorAll('.lab.kick,.about p,.lhead p,.val .lead,.rsrc').forEach(function(el){G.from(el,{y:30,opacity:0,duration:1.3,ease:E,scrollTrigger:{trigger:el,start:'top 92%'}})});
+/* photos: curtain reveal + inner parallax */
+document.querySelectorAll('.ph').forEach(function(p){var im=p.querySelector('img');
+ G.fromTo(p,{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:1.6,ease:'expo.inOut',scrollTrigger:{trigger:p,start:'top 88%'}});
+ if(im){G.fromTo(im,{scale:1.3},{scale:1,duration:2,ease:E,scrollTrigger:{trigger:p,start:'top 88%'}});
+  G.fromTo(im,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:p,start:'top bottom',end:'bottom top',scrub:true}})}});
+/* lists, cards, reviews, form */
+G.from('.points li',{x:-40,opacity:0,duration:1.2,stagger:.12,ease:E,scrollTrigger:{trigger:'.points',start:'top 88%'}});
+G.from('.sign',{y:30,opacity:0,duration:1.3,ease:E,scrollTrigger:{trigger:'.sign',start:'top 92%'}});
+G.from('.card .lab,.card h3,.card .loc,.card .par',{y:30,opacity:0,duration:1.2,stagger:.05,ease:E,scrollTrigger:{trigger:'.cards',start:'top 80%'}});
+G.from('.rv',{y:70,opacity:0,duration:1.4,stagger:.15,ease:E,scrollTrigger:{trigger:'.rgrid',start:'top 85%'}});
+G.from('.form',{y:70,opacity:0,duration:1.4,ease:E,scrollTrigger:{trigger:'.form',start:'top 88%'}});
+G.from('.ft .grid>div',{y:40,opacity:0,duration:1.2,stagger:.1,ease:E,scrollTrigger:{trigger:'.ft',start:'top 90%'}});
+/* magnetic buttons on desktop */
+if(matchMedia('(hover:hover)').matches){document.querySelectorAll('.btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();G.to(b,{x:(e.clientX-r.left-r.width/2)*.18,y:(e.clientY-r.top-r.height/2)*.3,duration:.5,ease:'power3.out'})});b.addEventListener('mouseleave',function(){G.to(b,{x:0,y:0,duration:.9,ease:'elastic.out(1,.45)'})})})}
+addEventListener('load',function(){ScrollTrigger.refresh()});
+}
+
+var menu=$('#menu');function open(){menu.classList.add('on');document.body.classList.add('lock')}function close(){menu.classList.remove('on');document.body.classList.remove('lock')}
+$('#bg').onclick=open;$('#mx').onclick=close;menu.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',close)});
+$('#f').onsubmit=function(e){e.preventDefault();var d=new FormData(this);var s='Здравствуйте! Хочу оценку объекта.\nАдрес: '+d.get('a')+'\nТип: '+d.get('t')+'\nИмя: '+d.get('n')+'\nТелефон: '+d.get('p');location.href='https://t.me/'+"leonovperm"+'?text='+encodeURIComponent(s)};
+$('#save').onclick=function(e){e.preventDefault();var a=document.createElement('a');a.href=URL.createObjectURL(new Blob(["BEGIN:VCARD\nVERSION:3.0\nFN:Метры ближе\nORG:Агентство недвижимости\nTEL;TYPE=CELL:+73422025552\nURL:https://t.me/leonovperm\nEND:VCARD"],{type:'text/vcard'}));a.download="metry-blizhe.vcf";a.click();var t=$('#toast');t.classList.add('on');setTimeout(function(){t.classList.remove('on')},2200)};
+})();
+</script>
+</body></html>
